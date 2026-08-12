@@ -1,0 +1,259 @@
+{
+  "events": [
+    {
+      "year": 1448,
+      "month": 1,
+      "day": 1,
+      "nameMs": "Awal Muharam / Maal Hijrah",
+      "nameEn": "Islamic New Year (Awal Muharram / Maal Hijrah)",
+      "type": "public_holiday",
+      "start": "2026-06-17",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1448,
+      "month": 1,
+      "day": 10,
+      "nameMs": "Hari Asyura",
+      "nameEn": "Day of Ashura",
+      "type": "ritual",
+      "start": "2026-06-26",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1448,
+      "month": 3,
+      "day": 12,
+      "nameMs": "Maulidur Rasul",
+      "nameEn": "Birthday of the Prophet Muhammad (Mawlid al-Nabi)",
+      "type": "public_holiday",
+      "start": "2026-08-25",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1448,
+      "month": 3,
+      "day": 12,
+      "nameMs": "Peristiwa Hijrah Nabi",
+      "nameEn": "The Prophetic Migration (Hijrah)",
+      "type": "historical",
+      "start": "2026-08-25",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1448,
+      "month": 7,
+      "day": 27,
+      "nameMs": "Israk dan Mikraj",
+      "nameEn": "Isra' and Mi'raj (Night Journey and Ascension)",
+      "type": "public_holiday",
+      "start": "2027-01-06",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1448,
+      "month": 9,
+      "day": 1,
+      "nameMs": "Awal Ramadan / Berpuasa",
+      "nameEn": "Beginning of Ramadan (start of fasting month)",
+      "type": "public_holiday",
+      "start": "2027-02-08",
+      "end": null,
+      "estimated": true
+    },
+    {
+      "year": 1448,
+      "month": 9,
+      "day": 17,
+      "nameMs": "Nuzul al-Quran",
+      "nameEn": "Nuzul al-Quran (Revelation of the Quran)",
+      "type": "public_holiday",
+      "start": "2027-02-24",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1448,
+      "month": 9,
+      "day": 17,
+      "nameMs": "Peristiwa Perang Badr",
+      "nameEn": "The Battle of Badr",
+      "type": "historical",
+      "start": "2027-02-24",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1448,
+      "month": 9,
+      "day": 20,
+      "nameMs": "Pembukaan Kota Mekah (Fathul Makkah)",
+      "nameEn": "The Conquest of Mecca",
+      "type": "historical",
+      "start": "2027-02-27",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1448,
+      "month": 10,
+      "day": 1,
+      "nameMs": "Hari Raya Puasa / Aidilfitri",
+      "nameEn": "Eid al-Fitr",
+      "type": "public_holiday",
+      "start": "2027-03-10",
+      "end": null,
+      "estimated": true
+    },
+    {
+      "year": 1448,
+      "month": 10,
+      "day": 7,
+      "nameMs": "Peristiwa Perang Uhud",
+      "nameEn": "The Battle of Uhud",
+      "type": "historical",
+      "start": "2027-03-16",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1448,
+      "month": 12,
+      "day": 1,
+      "nameMs": "Awal Zulhijah",
+      "nameEn": "Beginning of Dhu al-Hijjah",
+      "type": "public_holiday",
+      "start": "2027-05-08",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1448,
+      "month": 12,
+      "day": "1-10",
+      "nameMs": "10 Hari Pertama Zulhijjah",
+      "nameEn": "First 10 Days of Dhu al-Hijjah",
+      "type": "voluntary",
+      "start": "2027-05-08",
+      "end": "2027-05-17",
+      "estimated": false
+    },
+    {
+      "year": 1448,
+      "month": 12,
+      "day": 9,
+      "nameMs": "Hari Arafah",
+      "nameEn": "Day of Arafah",
+      "type": "ritual",
+      "start": "2027-05-16",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1448,
+      "month": 12,
+      "day": 9,
+      "nameMs": "Khutbah Terakhir & Pengharaman Nasi'",
+      "nameEn": "The Farewell Sermon & Ban on Nasi'",
+      "type": "historical",
+      "start": "2027-05-16",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1448,
+      "month": 12,
+      "day": 10,
+      "nameMs": "Hari Raya Korban / Aidiladha",
+      "nameEn": "Eid al-Adha",
+      "type": "public_holiday",
+      "start": "2027-05-17",
+      "end": null,
+      "estimated": true
+    },
+    {
+      "year": 1448,
+      "month": 12,
+      "day": "11-13",
+      "nameMs": "Hari-hari Tasyrik",
+      "nameEn": "Days of Tashreeq",
+      "type": "ritual",
+      "start": "2027-05-18",
+      "end": "2027-05-20",
+      "estimated": false
+    },
+    {
+      "year": 1449,
+      "month": 1,
+      "day": 1,
+      "nameMs": "Awal Muharam / Maal Hijrah",
+      "nameEn": "Islamic New Year (Awal Muharram / Maal Hijrah)",
+      "type": "public_holiday",
+      "start": "2027-06-06",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1449,
+      "month": 1,
+      "day": 10,
+      "nameMs": "Hari Asyura",
+      "nameEn": "Day of Ashura",
+      "type": "ritual",
+      "start": "2027-06-15",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1449,
+      "month": 3,
+      "day": 12,
+      "nameMs": "Maulidur Rasul",
+      "nameEn": "Birthday of the Prophet Muhammad (Mawlid al-Nabi)",
+      "type": "public_holiday",
+      "start": "2027-08-15",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1449,
+      "month": 3,
+      "day": 12,
+      "nameMs": "Peristiwa Hijrah Nabi",
+      "nameEn": "The Prophetic Migration (Hijrah)",
+      "type": "historical",
+      "start": "2027-08-15",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1449,
+      "month": 7,
+      "day": 27,
+      "nameMs": "Israk dan Mikraj",
+      "nameEn": "Isra' and Mi'raj (Night Journey and Ascension)",
+      "type": "public_holiday",
+      "start": "2027-12-26",
+      "end": null,
+      "estimated": false
+    }
+  ],
+  "recurring": [
+    {
+      "nameMs": "Puasa Sunat Ayyam al-Beed (Hari-Hari Putih)",
+      "nameEn": "White Days (Ayyam al-Beed)",
+      "type": "voluntary",
+      "days": [
+        13,
+        14,
+        15
+      ],
+      "monthly": true
+    }
+  ]
+}
