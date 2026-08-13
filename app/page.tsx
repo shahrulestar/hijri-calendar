@@ -1,7 +1,9 @@
-import { headers } from "next/headers"
+import { GithubIcon, InformationCircleIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 import { CopyButton } from "@/components/copy-button"
-import { Badge } from "@/components/ui/badge"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -9,32 +11,37 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group"
+import {
+  Item,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemTitle,
+} from "@/components/ui/item"
 import { MCP_PUBLIC_URL } from "@/lib/mcp/config"
-import { getPublicMcpUrl } from "@/lib/mcp/public-url"
 
 const TOOLS = [
   {
     name: "get_lunar_months",
     description:
-      "Lunar month details (list, one month, or Gregorian date lookup). Includes Hijri and Gregorian dates.",
-    params: "year?, month?, date?, calendar?",
+      "Look up Hijri months, or find which month covers a Gregorian date.",
   },
   {
     name: "get_islamic_events",
     description:
-      "Islamic calendar events for Malaysia (1448H–1449H). Includes Hijri and Gregorian dates.",
-    params: "year?, month?, type?, date?, includeRecurring?, calendar?",
+      "Look up important Islamic dates and observances in Malaysia.",
   },
 ] as const
 
-export default async function Page() {
-  const headerStore = await headers()
-  const host = headerStore.get("x-forwarded-host") ?? headerStore.get("host")
-  const proto =
-    headerStore.get("x-forwarded-proto") ??
-    (host?.includes("localhost") ? "http" : "https")
-  const origin = host ? `${proto}://${host}` : undefined
-  const mcpUrl = getPublicMcpUrl(origin)
+const JAKIM_URL =
+  "https://www.e-solat.gov.my/index.php?siteId=24&pageId=26"
+
+export default function Page() {
   const cursorConfig = JSON.stringify(
     {
       mcpServers: {
@@ -48,41 +55,49 @@ export default async function Page() {
   )
 
   return (
-    <main className="mx-auto flex min-h-svh w-full max-w-2xl flex-col gap-6 p-6">
-      <div className="flex flex-col gap-2">
-        <div className="flex flex-wrap items-center gap-2">
-          <h1 className="text-2xl font-medium tracking-tight">
-            Islamic Calendar MCP
-          </h1>
-          <Badge variant="secondary">Remote MCP</Badge>
-        </div>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          A Model Context Protocol server for the JAKIM Hijri calendar
-          (1447H–1449H). Connect Cursor, Claude, or other MCP clients to look up
-          Hijri months and Gregorian date mappings.
+    <main className="mx-auto flex min-h-svh w-full max-w-[1000px] flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
+      <header className="flex flex-col gap-3">
+        <h1 className="text-2xl font-medium tracking-tight sm:text-3xl">
+          Islamic Calendar MCP
+        </h1>
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+          A remote MCP server for the Malaysian Islamic (Hijri) calendar. Connect
+          Cursor, Claude, Figma, or other AI clients to look up Hijri months,
+          Gregorian dates, and important Islamic observances.
         </p>
-      </div>
+      </header>
 
       <Card>
         <CardHeader>
-          <CardTitle>Remote MCP URL</CardTitle>
+          <CardTitle>Connect</CardTitle>
           <CardDescription>
-            Official production endpoint for Streamable HTTP clients.
+            Use this URL in Cursor, Figma, Claude, or any Streamable HTTP MCP
+            client.
           </CardDescription>
         </CardHeader>
-        <CardContent className="flex flex-col gap-3">
-          <div className="flex flex-wrap items-center gap-2">
-            <code className="min-w-0 flex-1 truncate rounded-md bg-muted px-3 py-2 font-mono text-xs">
-              {MCP_PUBLIC_URL}
-            </code>
-            <CopyButton value={MCP_PUBLIC_URL} />
+        <CardContent className="flex flex-col gap-4">
+          <InputGroup>
+            <InputGroupInput
+              readOnly
+              value={MCP_PUBLIC_URL}
+              aria-label="Remote MCP URL"
+            />
+            <InputGroupAddon align="inline-end">
+              <CopyButton value={MCP_PUBLIC_URL} />
+            </InputGroupAddon>
+          </InputGroup>
+
+          <div className="flex flex-col gap-2">
+            <p className="text-sm font-medium">Cursor config</p>
+            <InputGroup className="h-auto items-start">
+              <pre className="min-w-0 flex-1 overflow-x-auto px-3 py-2 font-mono text-xs leading-relaxed">
+                {cursorConfig}
+              </pre>
+              <InputGroupAddon align="inline-end">
+                <CopyButton value={cursorConfig} />
+              </InputGroupAddon>
+            </InputGroup>
           </div>
-          {mcpUrl !== MCP_PUBLIC_URL ? (
-            <p className="text-xs text-muted-foreground">
-              Local development endpoint:{" "}
-              <code className="font-mono">{mcpUrl}</code>
-            </p>
-          ) : null}
         </CardContent>
       </Card>
 
@@ -90,47 +105,55 @@ export default async function Page() {
         <CardHeader>
           <CardTitle>Tools</CardTitle>
           <CardDescription>
-            Calendar data sourced from JAKIM. Months may be{" "}
-            <code className="font-mono">confirmed</code> or{" "}
-            <code className="font-mono">estimated</code>.
+            What AI clients can ask this server.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex flex-col gap-3">
+          <ItemGroup>
             {TOOLS.map((tool) => (
-              <div
-                key={tool.name}
-                className="flex flex-col gap-1 rounded-lg border border-border p-3"
-              >
-                <div className="flex flex-wrap items-center gap-2">
-                  <code className="font-mono text-sm font-medium">
-                    {tool.name}
-                  </code>
-                  <Badge variant="outline">{tool.params}</Badge>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  {tool.description}
-                </p>
-              </div>
+              <Item key={tool.name} variant="outline" size="sm">
+                <ItemContent>
+                  <ItemTitle>
+                    <code className="font-mono">{tool.name}</code>
+                  </ItemTitle>
+                  <ItemDescription>{tool.description}</ItemDescription>
+                </ItemContent>
+              </Item>
             ))}
-          </div>
+          </ItemGroup>
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Cursor config</CardTitle>
-          <CardDescription>
-            Add this to <code className="font-mono">.cursor/mcp.json</code>.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="flex flex-col gap-3">
-          <pre className="overflow-x-auto rounded-md bg-muted p-3 font-mono text-xs leading-relaxed">
-            {cursorConfig}
-          </pre>
-          <CopyButton value={cursorConfig} />
-        </CardContent>
-      </Card>
+      <Alert>
+        <HugeiconsIcon icon={InformationCircleIcon} />
+        <AlertTitle>Data source</AlertTitle>
+        <AlertDescription>
+          Calendar data follows Malaysia time (Asia/Kuala_Lumpur) and is verified
+          against{" "}
+          <a href={JAKIM_URL} target="_blank" rel="noreferrer">
+            JAKIM e-Solat
+          </a>
+          . Some later dates may still change after official moon-sighting
+          announcements.
+        </AlertDescription>
+        <div className="col-start-2 mt-2">
+          <Button
+            variant="outline"
+            size="sm"
+            nativeButton={false}
+            render={
+              <a
+                href="https://github.com/shahrulestar/islamic-calendar-mcp"
+                target="_blank"
+                rel="noreferrer"
+              />
+            }
+          >
+            <HugeiconsIcon icon={GithubIcon} data-icon="inline-start" />
+            GitHub
+          </Button>
+        </div>
+      </Alert>
     </main>
   )
 }

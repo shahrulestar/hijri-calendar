@@ -1,5 +1,107 @@
 {
+  "timezone": "Asia/Kuala_Lumpur",
+  "source": "https://www.e-solat.gov.my/index.php?siteId=24&pageId=26",
+  "note": "Confirmed JAKIM e-Solat dates are estimated=false. Other dates are derived from the Malaysia lunar month table (Asia/Kuala_Lumpur) and may change after official moon-sighting announcements.",
   "events": [
+    {
+      "year": 1447,
+      "month": 7,
+      "day": 27,
+      "nameMs": "Israk dan Mikraj",
+      "nameEn": "Isra' and Mi'raj (Night Journey and Ascension)",
+      "type": "public_holiday",
+      "start": "2026-01-17",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1447,
+      "month": 9,
+      "day": 1,
+      "nameMs": "Awal Ramadan / Berpuasa",
+      "nameEn": "Beginning of Ramadan (start of fasting month)",
+      "type": "public_holiday",
+      "start": "2026-02-19",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1447,
+      "month": 9,
+      "day": 17,
+      "nameMs": "Nuzul al-Quran",
+      "nameEn": "Nuzul al-Quran (Revelation of the Quran)",
+      "type": "public_holiday",
+      "start": "2026-03-07",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1447,
+      "month": 10,
+      "day": 1,
+      "nameMs": "Hari Raya Puasa / Aidilfitri",
+      "nameEn": "Eid al-Fitr",
+      "type": "public_holiday",
+      "start": "2026-03-21",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1447,
+      "month": 12,
+      "day": 1,
+      "nameMs": "Awal Zulhijah",
+      "nameEn": "Beginning of Dhu al-Hijjah",
+      "type": "public_holiday",
+      "start": "2026-05-18",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1447,
+      "month": 12,
+      "day": "1-10",
+      "nameMs": "10 Hari Pertama Zulhijjah",
+      "nameEn": "First 10 Days of Dhu al-Hijjah",
+      "type": "voluntary",
+      "start": "2026-05-18",
+      "end": "2026-05-27",
+      "estimated": false
+    },
+    {
+      "year": 1447,
+      "month": 12,
+      "day": 9,
+      "nameMs": "Hari Arafah",
+      "nameEn": "Day of Arafah",
+      "type": "ritual",
+      "start": "2026-05-26",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1447,
+      "month": 12,
+      "day": 10,
+      "nameMs": "Hari Raya Korban / Aidiladha",
+      "nameEn": "Eid al-Adha",
+      "type": "public_holiday",
+      "start": "2026-05-27",
+      "end": null,
+      "estimated": false
+    },
+    {
+      "year": 1447,
+      "month": 12,
+      "day": "11-13",
+      "nameMs": "Hari-hari Tasyrik",
+      "nameEn": "Days of Tashreeq",
+      "type": "ritual",
+      "start": "2026-05-28",
+      "end": "2026-05-30",
+      "estimated": false
+    },
     {
       "year": 1448,
       "month": 1,
@@ -7,7 +109,7 @@
       "nameMs": "Awal Muharam / Maal Hijrah",
       "nameEn": "Islamic New Year (Awal Muharram / Maal Hijrah)",
       "type": "public_holiday",
-      "start": "2026-06-06",
+      "start": "2026-06-17",
       "end": null,
       "estimated": false
     },
@@ -18,7 +120,7 @@
       "nameMs": "Hari Asyura",
       "nameEn": "Day of Ashura",
       "type": "ritual",
-      "start": "2026-06-15",
+      "start": "2026-06-26",
       "end": null,
       "estimated": false
     },
@@ -29,7 +131,7 @@
       "nameMs": "Maulidur Rasul",
       "nameEn": "Birthday of the Prophet Muhammad (Mawlid al-Nabi)",
       "type": "public_holiday",
-      "start": "2026-08-15",
+      "start": "2026-08-25",
       "end": null,
       "estimated": false
     },
@@ -40,7 +142,7 @@
       "nameMs": "Peristiwa Hijrah Nabi",
       "nameEn": "The Prophetic Migration (Hijrah)",
       "type": "historical",
-      "start": "2026-08-15",
+      "start": "2026-08-25",
       "end": null,
       "estimated": false
     },
@@ -51,9 +153,9 @@
       "nameMs": "Israk dan Mikraj",
       "nameEn": "Isra' and Mi'raj (Night Journey and Ascension)",
       "type": "public_holiday",
-      "start": "2026-12-26",
+      "start": "2027-01-05",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1448,
@@ -62,9 +164,9 @@
       "nameMs": "Awal Ramadan / Berpuasa",
       "nameEn": "Beginning of Ramadan (start of fasting month)",
       "type": "public_holiday",
-      "start": "2027-01-29",
+      "start": "2027-02-07",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1448,
@@ -73,9 +175,9 @@
       "nameMs": "Nuzul al-Quran",
       "nameEn": "Nuzul al-Quran (Revelation of the Quran)",
       "type": "public_holiday",
-      "start": "2027-02-14",
+      "start": "2027-02-23",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1448,
@@ -84,9 +186,9 @@
       "nameMs": "Peristiwa Perang Badr",
       "nameEn": "The Battle of Badr",
       "type": "historical",
-      "start": "2027-02-14",
+      "start": "2027-02-23",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1448,
@@ -95,9 +197,9 @@
       "nameMs": "Pembukaan Kota Mekah (Fathul Makkah)",
       "nameEn": "The Conquest of Mecca",
       "type": "historical",
-      "start": "2027-02-17",
+      "start": "2027-02-26",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1448,
@@ -106,9 +208,9 @@
       "nameMs": "Hari Raya Puasa / Aidilfitri",
       "nameEn": "Eid al-Fitr",
       "type": "public_holiday",
-      "start": "2027-02-27",
+      "start": "2027-03-09",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1448,
@@ -117,9 +219,9 @@
       "nameMs": "Peristiwa Perang Uhud",
       "nameEn": "The Battle of Uhud",
       "type": "historical",
-      "start": "2027-03-05",
+      "start": "2027-03-15",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1448,
@@ -128,9 +230,9 @@
       "nameMs": "Awal Zulhijah",
       "nameEn": "Beginning of Dhu al-Hijjah",
       "type": "public_holiday",
-      "start": "2027-04-26",
+      "start": "2027-05-07",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1448,
@@ -139,9 +241,9 @@
       "nameMs": "10 Hari Pertama Zulhijjah",
       "nameEn": "First 10 Days of Dhu al-Hijjah",
       "type": "voluntary",
-      "start": "2027-04-26",
-      "end": "2027-05-05",
-      "estimated": false
+      "start": "2027-05-07",
+      "end": "2027-05-16",
+      "estimated": true
     },
     {
       "year": 1448,
@@ -150,9 +252,9 @@
       "nameMs": "Hari Arafah",
       "nameEn": "Day of Arafah",
       "type": "ritual",
-      "start": "2027-05-04",
+      "start": "2027-05-15",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1448,
@@ -161,9 +263,9 @@
       "nameMs": "Khutbah Terakhir & Pengharaman Nasi'",
       "nameEn": "The Farewell Sermon & Ban on Nasi'",
       "type": "historical",
-      "start": "2027-05-04",
+      "start": "2027-05-15",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1448,
@@ -172,9 +274,9 @@
       "nameMs": "Hari Raya Korban / Aidiladha",
       "nameEn": "Eid al-Adha",
       "type": "public_holiday",
-      "start": "2027-05-05",
+      "start": "2027-05-16",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1448,
@@ -183,9 +285,9 @@
       "nameMs": "Hari-hari Tasyrik",
       "nameEn": "Days of Tashreeq",
       "type": "ritual",
-      "start": "2027-05-06",
-      "end": "2027-05-08",
-      "estimated": false
+      "start": "2027-05-17",
+      "end": "2027-05-19",
+      "estimated": true
     },
     {
       "year": 1449,
@@ -194,9 +296,9 @@
       "nameMs": "Awal Muharam / Maal Hijrah",
       "nameEn": "Islamic New Year (Awal Muharram / Maal Hijrah)",
       "type": "public_holiday",
-      "start": "2027-05-26",
+      "start": "2027-06-06",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1449,
@@ -205,9 +307,9 @@
       "nameMs": "Hari Asyura",
       "nameEn": "Day of Ashura",
       "type": "ritual",
-      "start": "2027-06-04",
+      "start": "2027-06-15",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1449,
@@ -216,9 +318,9 @@
       "nameMs": "Maulidur Rasul",
       "nameEn": "Birthday of the Prophet Muhammad (Mawlid al-Nabi)",
       "type": "public_holiday",
-      "start": "2027-08-04",
+      "start": "2027-08-15",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1449,
@@ -227,9 +329,9 @@
       "nameMs": "Peristiwa Hijrah Nabi",
       "nameEn": "The Prophetic Migration (Hijrah)",
       "type": "historical",
-      "start": "2027-08-04",
+      "start": "2027-08-15",
       "end": null,
-      "estimated": false
+      "estimated": true
     },
     {
       "year": 1449,
@@ -238,9 +340,9 @@
       "nameMs": "Israk dan Mikraj",
       "nameEn": "Isra' and Mi'raj (Night Journey and Ascension)",
       "type": "public_holiday",
-      "start": "2027-12-15",
+      "start": "2027-12-26",
       "end": null,
-      "estimated": false
+      "estimated": true
     }
   ],
   "recurring": [

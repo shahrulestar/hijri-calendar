@@ -25,8 +25,8 @@ https://islam-calendar.shahrulestar.com/mcp
 
 ## Data source
 
-Calendar data is verified against JAKIM’s official Islamic calendar (e-Solat):
+Calendar data follows Malaysia timezone (`Asia/Kuala_Lumpur`) and is verified against JAKIM’s official Islamic calendar (e-Solat):
 
 [JAKIM Islamic Calendar](https://www.e-solat.gov.my/index.php?siteId=24&pageId=26)
 
-Some dates marked by JAKIM may still depend on official moon-sighting announcements.
+Confirmed JAKIM dates are used as-is. Later dates are estimated from the lunar month table and may change after official moon-sighting announcements — this server never advances an event earlier than its Hijri day on that table.

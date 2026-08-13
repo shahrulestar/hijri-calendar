@@ -135,15 +135,15 @@ export function registerTools(server: McpServer) {
     {
       title: "Get Islamic Events",
       description:
-        "Get important Islamic calendar events for Malaysia (1448H–1449H). Filter by year, month, type, or Gregorian date. Responses always include Hijri and Gregorian dates. Set includeRecurring to include monthly recurring events.",
+        "Get important Islamic calendar events for Malaysia (1447H–1449H, Asia/Kuala_Lumpur). Gregorian dates are derived from the JAKIM lunar month table so they are never earlier than the Hijri day. Confirmed JAKIM e-Solat dates are estimated=false; later dates may still follow official moon-sighting. Filter by year, month, type, or Gregorian date. Set includeRecurring to include monthly recurring events.",
       inputSchema: z.object({
         year: z
           .number()
           .int()
-          .min(1448)
+          .min(1447)
           .max(1449)
           .optional()
-          .describe("Hijri year (1448–1449)"),
+          .describe("Hijri year (1447–1449)"),
         month: z
           .number()
           .int()
