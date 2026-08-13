@@ -14,19 +14,16 @@ import { getPublicMcpUrl } from "@/lib/mcp/public-url"
 
 const TOOLS = [
   {
-    name: "list_months",
-    description: "List Hijri months (1447H–1449H).",
-    params: "year?, status?",
+    name: "get_lunar_months",
+    description:
+      "Lunar month details (list, one month, or Gregorian date lookup). Includes Hijri and Gregorian dates.",
+    params: "year?, month?, date?, calendar?",
   },
   {
-    name: "get_month",
-    description: "Get one Hijri month by year and month number.",
-    params: "year, month",
-  },
-  {
-    name: "lookup_date",
-    description: "Find Hijri month for a Gregorian date (defaults to today MYT).",
-    params: "date?",
+    name: "get_islamic_events",
+    description:
+      "Islamic calendar events for Malaysia (1448H–1449H). Includes Hijri and Gregorian dates.",
+    params: "year?, month?, type?, date?, includeRecurring?, calendar?",
   },
 ] as const
 

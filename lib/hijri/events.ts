@@ -1,5 +1,13 @@
 import data from "../../data/islamic_events.json"
 
+import {
+  type CalendarMode,
+  formatHijriDate,
+  getMonth,
+  gregorianYears,
+  orderCalendarFields,
+} from "./calendar"
+
 export type EventType =
   | "public_holiday"
   | "ritual"
@@ -9,7 +17,7 @@ export type EventType =
 export interface IslamicEvent {
   year: number
   month: number
-  day: number
+  day: number | string
   nameMs: string
   nameEn: string
   type: EventType
@@ -24,6 +32,24 @@ export interface RecurringEvent {
   type: EventType
   days: number[]
   monthly: boolean
+}
+
+export interface EventView {
+  nameMs: string
+  nameEn: string
+  type: EventType
+  estimated: boolean
+  hijri: {
+    year: number
+    month: number
+    day: number | string
+    display: string
+  }
+  gregorian: {
+    start: string
+    end: string | null
+    years: number[]
+  }
 }
 
 const events = data.events as IslamicEvent[]
@@ -50,4 +76,33 @@ export function listEvents(filters?: {
 
 export function listRecurringEvents(): RecurringEvent[] {
   return recurring
+}
+
+export function toEventView(
+  entry: IslamicEvent,
+  calendar: CalendarMode = "both",
+): EventView {
+  const month = getMonth(entry.year, entry.month)
+  const nameMs = month?.nameMs ?? `Month ${entry.month}`
+
+  return orderCalendarFields(
+    {
+      nameMs: entry.nameMs,
+      nameEn: entry.nameEn,
+      type: entry.type,
+      estimated: entry.estimated,
+      hijri: {
+        year: entry.year,
+        month: entry.month,
+        day: entry.day,
+        display: formatHijriDate(entry.day, nameMs, entry.year),
+      },
+      gregorian: {
+        start: entry.start,
+        end: entry.end,
+        years: gregorianYears(entry.start, entry.end ?? entry.start),
+      },
+    },
+    calendar,
+  )
 }

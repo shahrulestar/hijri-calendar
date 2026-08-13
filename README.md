@@ -1,78 +1,32 @@
 # Islamic Calendar MCP
 
-Cloudflare Worker MCP server for the JAKIM Hijri calendar (1447H–1449H), plus a local Next.js app for development UI.
+A remote MCP server for the Malaysian Islamic (Hijri) calendar.
 
-## Remote MCP URL
+It helps AI tools look up Hijri months, Gregorian dates, and important Islamic dates in Malaysia — such as Awal Ramadan, Aidilfitri, Aidiladha, Maal Hijrah, and Maulidur Rasul.
+
+## Connect
 
 ```text
 https://islam-calendar.shahrulestar.com/mcp
 ```
 
-## Worker (production)
+## What it covers
 
-```bash
-npm install
-npm run worker:dev      # http://127.0.0.1:8788/mcp
-npm run worker:deploy   # deploy + custom domain
-```
+- Hijri lunar months (1447H–1449H)
+- Important Islamic dates and observances in Malaysia
+- Matching Hijri and Gregorian (Miladi) dates
 
-Config: [`wrangler.jsonc`](wrangler.jsonc) — Worker `islamic-calendar-mcp` on custom domain `islam-calendar.shahrulestar.com`.
+## Tools
 
-## Next.js (local UI + /api/mcp)
+| Tool | What it does |
+|------|----------------|
+| `get_lunar_months` | Look up Hijri months, or find which month covers a Gregorian date |
+| `get_islamic_events` | Look up important Islamic dates and observances in Malaysia |
 
-```bash
-npm run dev
-```
+## Data source
 
-Local Next MCP: `http://localhost:3000/api/mcp`
+Calendar data is verified against JAKIM’s official Islamic calendar (e-Solat):
 
-## Data
+[JAKIM Islamic Calendar](https://www.e-solat.gov.my/index.php?siteId=24&pageId=26)
 
-| File | Content |
-|------|---------|
-| [`data/hijri_months.json`](data/hijri_months.json) | Lunar month start/end (1447H–1449H) |
-| [`data/islamic_events.json`](data/islamic_events.json) | Islamic calendar events (1448H–1449H) |
-
-## MCP tools
-
-| Tool | Description | Parameters |
-|------|-------------|------------|
-| `get_lunar_months` | Lunar month details (list, one month, or date lookup) | `year?`, `month?`, `status?`, `date?` |
-| `get_islamic_events` | Islamic calendar events for Malaysia | `year?`, `month?`, `type?`, `date?`, `includeRecurring?` |
-
-## Cursor setup
-
-```json
-{
-  "mcpServers": {
-    "islamic-calendar": {
-      "url": "https://islam-calendar.shahrulestar.com/mcp"
-    }
-  }
-}
-```
-
-Local Worker:
-
-```json
-{
-  "mcpServers": {
-    "islamic-calendar": {
-      "url": "http://127.0.0.1:8788/mcp"
-    }
-  }
-}
-```
-
-Stdio proxy clients:
-
-```json
-{
-  "mcpServers": {
-    "islamic-calendar": {
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "https://islam-calendar.shahrulestar.com/mcp"]
-    }
-  }
-}
-```
+Some dates marked by JAKIM may still depend on official moon-sighting announcements.

@@ -6,8 +6,22 @@ import {
   getMonth,
   listMonths,
   lookupDate,
+  orderCalendarFields,
+  toMonthView,
+  type CalendarMode,
 } from "@/lib/hijri/calendar"
-import { listEvents, listRecurringEvents } from "@/lib/hijri/events"
+import { listEvents, listRecurringEvents, toEventView } from "@/lib/hijri/events"
+
+const calendarSchema = z
+  .enum(["hijri", "gregorian", "both"])
+  .optional()
+  .describe(
+    "Preferred calendar emphasis. Always includes both Hijri and Gregorian. Default: both.",
+  )
+
+function resolveCalendar(calendar?: CalendarMode): CalendarMode {
+  return calendar ?? "both"
+}
 
 export function registerTools(server: McpServer) {
   server.registerTool(
@@ -15,7 +29,7 @@ export function registerTools(server: McpServer) {
     {
       title: "Get Lunar Months",
       description:
-        "Get Hijri (lunar) month details from the JAKIM calendar (1447H–1449H). Filter by year, month, or status. Pass date (YYYY-MM-DD) to resolve which lunar month covers that Gregorian day.",
+        "Get Hijri (lunar) month details from the JAKIM calendar (1447H–1449H). Filter by year or month. Pass date (YYYY-MM-DD) to resolve which lunar month covers that Gregorian day. Responses always include Hijri and Gregorian dates.",
       inputSchema: z.object({
         year: z
           .number()
@@ -31,10 +45,6 @@ export function registerTools(server: McpServer) {
           .max(12)
           .optional()
           .describe("Hijri month order (1–12)"),
-        status: z
-          .enum(["confirmed", "estimated"])
-          .optional()
-          .describe("Month confirmation status"),
         date: z
           .string()
           .regex(/^\d{4}-\d{2}-\d{2}$/)
@@ -42,9 +52,12 @@ export function registerTools(server: McpServer) {
           .describe(
             "Gregorian ISO date (YYYY-MM-DD). Returns covering month and day-of-month.",
           ),
+        calendar: calendarSchema,
       }),
     },
-    async ({ year, month, status, date }) => {
+    async ({ year, month, date, calendar }) => {
+      const mode = resolveCalendar(calendar)
+
       if (date !== undefined) {
         const result = lookupDate(date)
         if (!result) {
@@ -58,7 +71,24 @@ export function registerTools(server: McpServer) {
             isError: true,
           }
         }
-        return { content: [{ type: "text", text: formatJson(result) }] }
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: formatJson({
+                ...orderCalendarFields(
+                  {
+                    hijri: result.hijri,
+                    gregorian: result.gregorian,
+                  },
+                  mode,
+                ),
+                month: orderCalendarFields(result.month, mode),
+              }),
+            },
+          ],
+        }
       }
 
       if (year !== undefined && month !== undefined) {
@@ -74,14 +104,26 @@ export function registerTools(server: McpServer) {
             isError: true,
           }
         }
-        return { content: [{ type: "text", text: formatJson(entry) }] }
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: formatJson(orderCalendarFields(toMonthView(entry), mode)),
+            },
+          ],
+        }
       }
 
       return {
         content: [
           {
             type: "text",
-            text: formatJson(listMonths({ year, status })),
+            text: formatJson(
+              listMonths({ year }).map((entry) =>
+                orderCalendarFields(toMonthView(entry), mode),
+              ),
+            ),
           },
         ],
       }
@@ -93,7 +135,7 @@ export function registerTools(server: McpServer) {
     {
       title: "Get Islamic Events",
       description:
-        "Get important Islamic calendar events for Malaysia (1448H–1449H). Filter by year, month, type, or Gregorian date. Set includeRecurring to include monthly recurring events.",
+        "Get important Islamic calendar events for Malaysia (1448H–1449H). Filter by year, month, type, or Gregorian date. Responses always include Hijri and Gregorian dates. Set includeRecurring to include monthly recurring events.",
       inputSchema: z.object({
         year: z
           .number()
@@ -122,14 +164,18 @@ export function registerTools(server: McpServer) {
           .boolean()
           .optional()
           .describe("Include monthly recurring events (default false)"),
+        calendar: calendarSchema,
       }),
     },
-    async ({ year, month, type, date, includeRecurring }) => {
+    async ({ year, month, type, date, includeRecurring, calendar }) => {
+      const mode = resolveCalendar(calendar)
       const payload: {
-        events: ReturnType<typeof listEvents>
+        events: ReturnType<typeof toEventView>[]
         recurring?: ReturnType<typeof listRecurringEvents>
       } = {
-        events: listEvents({ year, month, type, date }),
+        events: listEvents({ year, month, type, date }).map((entry) =>
+          toEventView(entry, mode),
+        ),
       }
 
       if (includeRecurring) {

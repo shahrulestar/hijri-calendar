@@ -2,13 +2,13 @@
   "years": [
     {
       "year": 1447,
-      "days": 355,
-      "type": "leap (355 days)"
+      "days": 344,
+      "type": "custom (344 days)"
     },
     {
       "year": 1448,
-      "days": 354,
-      "type": "common (354 days)"
+      "days": 352,
+      "type": "custom (352 days)"
     },
     {
       "year": 1449,
@@ -25,8 +25,7 @@
       "code": "MUH",
       "start": "2025-06-27",
       "end": "2025-07-26",
-      "days": 30,
-      "status": "estimated"
+      "days": 30
     },
     {
       "year": 1447,
@@ -36,8 +35,7 @@
       "code": "SAF",
       "start": "2025-07-27",
       "end": "2025-08-24",
-      "days": 29,
-      "status": "estimated"
+      "days": 29
     },
     {
       "year": 1447,
@@ -47,8 +45,7 @@
       "code": "RAW",
       "start": "2025-08-25",
       "end": "2025-09-23",
-      "days": 30,
-      "status": "estimated"
+      "days": 30
     },
     {
       "year": 1447,
@@ -58,8 +55,7 @@
       "code": "RAK",
       "start": "2025-09-24",
       "end": "2025-10-23",
-      "days": 30,
-      "status": "estimated"
+      "days": 30
     },
     {
       "year": 1447,
@@ -69,8 +65,7 @@
       "code": "JAW",
       "start": "2025-10-24",
       "end": "2025-11-22",
-      "days": 30,
-      "status": "estimated"
+      "days": 30
     },
     {
       "year": 1447,
@@ -80,8 +75,7 @@
       "code": "JAK",
       "start": "2025-11-23",
       "end": "2025-12-21",
-      "days": 29,
-      "status": "estimated"
+      "days": 29
     },
     {
       "year": 1447,
@@ -91,8 +85,7 @@
       "code": "REJ",
       "start": "2025-12-22",
       "end": "2026-01-20",
-      "days": 30,
-      "status": "confirmed"
+      "days": 30
     },
     {
       "year": 1447,
@@ -102,8 +95,7 @@
       "code": "SYA",
       "start": "2026-01-21",
       "end": "2026-02-18",
-      "days": 29,
-      "status": "estimated"
+      "days": 29
     },
     {
       "year": 1447,
@@ -113,8 +105,7 @@
       "code": "RAM",
       "start": "2026-02-19",
       "end": "2026-03-20",
-      "days": 30,
-      "status": "confirmed"
+      "days": 30
     },
     {
       "year": 1447,
@@ -124,8 +115,7 @@
       "code": "SYW",
       "start": "2026-03-21",
       "end": "2026-04-18",
-      "days": 29,
-      "status": "confirmed"
+      "days": 29
     },
     {
       "year": 1447,
@@ -135,8 +125,7 @@
       "code": "ZKD",
       "start": "2026-04-19",
       "end": "2026-05-17",
-      "days": 29,
-      "status": "confirmed"
+      "days": 29
     },
     {
       "year": 1447,
@@ -145,9 +134,8 @@
       "nameEn": "Dhu al-Hijjah",
       "code": "ZHJ",
       "start": "2026-05-18",
-      "end": "2026-06-16",
-      "days": 30,
-      "status": "confirmed"
+      "end": "2026-06-05",
+      "days": 19
     },
     {
       "year": 1448,
@@ -155,10 +143,9 @@
       "nameMs": "Muharam",
       "nameEn": "Muharram",
       "code": "MUH",
-      "start": "2026-06-17",
-      "end": "2026-07-15",
-      "days": 29,
-      "status": "confirmed"
+      "start": "2026-06-06",
+      "end": "2026-07-05",
+      "days": 30
     },
     {
       "year": 1448,
@@ -166,10 +153,9 @@
       "nameMs": "Safar",
       "nameEn": "Safar",
       "code": "SAF",
-      "start": "2026-07-16",
-      "end": "2026-08-13",
-      "days": 29,
-      "status": "confirmed"
+      "start": "2026-07-06",
+      "end": "2026-08-03",
+      "days": 29
     },
     {
       "year": 1448,
@@ -177,10 +163,9 @@
       "nameMs": "Rabiulawal",
       "nameEn": "Rabi' al-Awwal",
       "code": "RAW",
-      "start": "2026-08-14",
-      "end": "2026-09-11",
-      "days": 29,
-      "status": "confirmed"
+      "start": "2026-08-04",
+      "end": "2026-09-01",
+      "days": 29
     },
     {
       "year": 1448,
@@ -188,10 +173,9 @@
       "nameMs": "Rabiulakhir",
       "nameEn": "Rabi' al-Thani",
       "code": "RAK",
-      "start": "2026-09-12",
-      "end": "2026-10-11",
-      "days": 30,
-      "status": "estimated"
+      "start": "2026-09-02",
+      "end": "2026-10-01",
+      "days": 30
     },
     {
       "year": 1448,
@@ -199,10 +183,9 @@
       "nameMs": "Jamadilawal",
       "nameEn": "Jumada al-Awwal",
       "code": "JAW",
-      "start": "2026-10-12",
-      "end": "2026-11-10",
-      "days": 30,
-      "status": "estimated"
+      "start": "2026-10-02",
+      "end": "2026-10-30",
+      "days": 29
     },
     {
       "year": 1448,
@@ -210,10 +193,9 @@
       "nameMs": "Jamadilakhir",
       "nameEn": "Jumada al-Thani",
       "code": "JAK",
-      "start": "2026-11-11",
-      "end": "2026-12-10",
-      "days": 30,
-      "status": "estimated"
+      "start": "2026-10-31",
+      "end": "2026-11-29",
+      "days": 30
     },
     {
       "year": 1448,
@@ -221,10 +203,9 @@
       "nameMs": "Rejab",
       "nameEn": "Rajab",
       "code": "REJ",
-      "start": "2026-12-11",
-      "end": "2027-01-09",
-      "days": 30,
-      "status": "confirmed"
+      "start": "2026-11-30",
+      "end": "2026-12-28",
+      "days": 29
     },
     {
       "year": 1448,
@@ -232,10 +213,9 @@
       "nameMs": "Syaaban",
       "nameEn": "Sha'ban",
       "code": "SYA",
-      "start": "2027-01-10",
-      "end": "2027-02-07",
-      "days": 29,
-      "status": "estimated"
+      "start": "2026-12-30",
+      "end": "2027-01-27",
+      "days": 29
     },
     {
       "year": 1448,
@@ -243,10 +223,9 @@
       "nameMs": "Ramadan",
       "nameEn": "Ramadan",
       "code": "RAM",
-      "start": "2027-02-08",
-      "end": "2027-03-09",
-      "days": 30,
-      "status": "confirmed"
+      "start": "2027-01-29",
+      "end": "2027-02-26",
+      "days": 29
     },
     {
       "year": 1448,
@@ -254,10 +233,9 @@
       "nameMs": "Syawal",
       "nameEn": "Shawwal",
       "code": "SYW",
-      "start": "2027-03-10",
-      "end": "2027-04-08",
-      "days": 30,
-      "status": "confirmed"
+      "start": "2027-02-27",
+      "end": "2027-03-27",
+      "days": 29
     },
     {
       "year": 1448,
@@ -265,10 +243,9 @@
       "nameMs": "Zulkaedah",
       "nameEn": "Dhu al-Qi'dah",
       "code": "ZKD",
-      "start": "2027-04-09",
-      "end": "2027-05-07",
-      "days": 29,
-      "status": "estimated"
+      "start": "2027-03-28",
+      "end": "2027-04-25",
+      "days": 29
     },
     {
       "year": 1448,
@@ -276,10 +253,9 @@
       "nameMs": "Zulhijah",
       "nameEn": "Dhu al-Hijjah",
       "code": "ZHJ",
-      "start": "2027-05-08",
-      "end": "2027-06-05",
-      "days": 29,
-      "status": "confirmed"
+      "start": "2027-04-26",
+      "end": "2027-05-25",
+      "days": 30
     },
     {
       "year": 1449,
@@ -287,10 +263,9 @@
       "nameMs": "Muharam",
       "nameEn": "Muharram",
       "code": "MUH",
-      "start": "2027-06-06",
-      "end": "2027-07-04",
-      "days": 29,
-      "status": "confirmed"
+      "start": "2027-05-26",
+      "end": "2027-06-23",
+      "days": 29
     },
     {
       "year": 1449,
@@ -298,10 +273,9 @@
       "nameMs": "Safar",
       "nameEn": "Safar",
       "code": "SAF",
-      "start": "2027-07-05",
-      "end": "2027-08-03",
-      "days": 30,
-      "status": "estimated"
+      "start": "2027-06-24",
+      "end": "2027-07-23",
+      "days": 30
     },
     {
       "year": 1449,
@@ -309,10 +283,9 @@
       "nameMs": "Rabiulawal",
       "nameEn": "Rabi' al-Awwal",
       "code": "RAW",
-      "start": "2027-08-04",
-      "end": "2027-09-02",
-      "days": 30,
-      "status": "confirmed"
+      "start": "2027-07-24",
+      "end": "2027-08-22",
+      "days": 30
     },
     {
       "year": 1449,
@@ -320,10 +293,9 @@
       "nameMs": "Rabiulakhir",
       "nameEn": "Rabi' al-Thani",
       "code": "RAK",
-      "start": "2027-09-03",
-      "end": "2027-10-01",
-      "days": 29,
-      "status": "estimated"
+      "start": "2027-08-23",
+      "end": "2027-09-20",
+      "days": 29
     },
     {
       "year": 1449,
@@ -331,10 +303,9 @@
       "nameMs": "Jamadilawal",
       "nameEn": "Jumada al-Awwal",
       "code": "JAW",
-      "start": "2027-10-02",
-      "end": "2027-10-31",
-      "days": 30,
-      "status": "estimated"
+      "start": "2027-09-21",
+      "end": "2027-10-20",
+      "days": 30
     },
     {
       "year": 1449,
@@ -342,10 +313,9 @@
       "nameMs": "Jamadilakhir",
       "nameEn": "Jumada al-Thani",
       "code": "JAK",
-      "start": "2027-11-01",
-      "end": "2027-11-29",
-      "days": 29,
-      "status": "estimated"
+      "start": "2027-10-21",
+      "end": "2027-11-18",
+      "days": 29
     },
     {
       "year": 1449,
@@ -353,10 +323,9 @@
       "nameMs": "Rejab",
       "nameEn": "Rajab",
       "code": "REJ",
-      "start": "2027-11-30",
-      "end": "2027-12-29",
-      "days": 30,
-      "status": "confirmed"
+      "start": "2027-11-19",
+      "end": "2027-12-18",
+      "days": 30
     },
     {
       "year": 1449,
@@ -364,10 +333,9 @@
       "nameMs": "Syaaban",
       "nameEn": "Sha'ban",
       "code": "SYA",
-      "start": "2027-12-30",
-      "end": "2028-01-28",
-      "days": 30,
-      "status": "estimated"
+      "start": "2027-12-19",
+      "end": "2028-01-17",
+      "days": 30
     },
     {
       "year": 1449,
@@ -375,10 +343,9 @@
       "nameMs": "Ramadan",
       "nameEn": "Ramadan",
       "code": "RAM",
-      "start": "2028-01-29",
-      "end": "2028-02-26",
-      "days": 29,
-      "status": "estimated"
+      "start": "2028-01-18",
+      "end": "2028-02-15",
+      "days": 29
     },
     {
       "year": 1449,
@@ -386,10 +353,9 @@
       "nameMs": "Syawal",
       "nameEn": "Shawwal",
       "code": "SYW",
-      "start": "2028-02-27",
-      "end": "2028-03-27",
-      "days": 30,
-      "status": "estimated"
+      "start": "2028-02-16",
+      "end": "2028-03-16",
+      "days": 30
     },
     {
       "year": 1449,
@@ -397,10 +363,9 @@
       "nameMs": "Zulkaedah",
       "nameEn": "Dhu al-Qi'dah",
       "code": "ZKD",
-      "start": "2028-03-28",
-      "end": "2028-04-26",
-      "days": 30,
-      "status": "estimated"
+      "start": "2028-03-17",
+      "end": "2028-04-15",
+      "days": 30
     },
     {
       "year": 1449,
@@ -408,10 +373,9 @@
       "nameMs": "Zulhijah",
       "nameEn": "Dhu al-Hijjah",
       "code": "ZHJ",
-      "start": "2028-04-27",
-      "end": "2028-05-25",
-      "days": 29,
-      "status": "estimated"
+      "start": "2028-04-16",
+      "end": "2028-05-14",
+      "days": 29
     }
   ]
 }
