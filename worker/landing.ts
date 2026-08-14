@@ -135,6 +135,8 @@ export const LANDING_HTML = `<!DOCTYPE html>
       padding: 0.75rem 1rem;
       border: 1px solid var(--border);
       border-radius: 0.5rem;
+      background: var(--card);
+      color: var(--fg);
       font-size: 0.875rem;
     }
     .alert strong { font-weight: 500; }

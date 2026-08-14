@@ -6,7 +6,8 @@ export interface HijriMonth {
   month: number
   nameMs: string
   nameEn: string
-  code: string
+  codeMs: string
+  codeEn: string
   start: string
   end: string
   days: number
@@ -25,7 +26,8 @@ export interface MonthView {
   month: number
   nameMs: string
   nameEn: string
-  code: string
+  codeMs: string
+  codeEn: string
   days: number
   hijri: { start: string; end: string }
   gregorian: {
@@ -54,8 +56,10 @@ export interface TakwimDay {
   day_code: string
   hijri_date: string
   hijri_year: number
-  hijri_month_code: string
-  hijri_month_name: string
+  hijri_month_code_ms: string
+  hijri_month_code_en: string
+  hijri_month_name_ms: string
+  hijri_month_name_en: string
   hijri_day: number
   estimated: boolean
 }
@@ -66,8 +70,10 @@ export interface DayView {
     year: number
     month: number
     day: number
-    code: string
+    codeMs: string
+    codeEn: string
     nameMs: string
+    nameEn: string
     display: string
   }
   estimated: boolean
@@ -84,7 +90,7 @@ export interface ListDaysFilters {
 const months = data.months as HijriMonth[]
 const years = data.years as HijriYearSummary[]
 const monthByCode = new Map(
-  months.map((entry) => [`${entry.year}:${entry.code}`, entry] as const),
+  months.map((entry) => [`${entry.year}:${entry.codeMs}`, entry] as const),
 )
 
 const takwimDays: TakwimDay[] = Object.values(
@@ -128,7 +134,8 @@ export function toMonthView(entry: HijriMonth): MonthView {
     month: entry.month,
     nameMs: entry.nameMs,
     nameEn: entry.nameEn,
-    code: entry.code,
+    codeMs: entry.codeMs,
+    codeEn: entry.codeEn,
     days: entry.days,
     hijri: {
       start: formatHijriDate(1, entry.nameMs, entry.year),
@@ -189,7 +196,7 @@ export function getTodayIso(): string {
 }
 
 function monthForDay(day: TakwimDay): HijriMonth | undefined {
-  return monthByCode.get(`${day.hijri_year}:${day.hijri_month_code}`)
+  return monthByCode.get(`${day.hijri_year}:${day.hijri_month_code_ms}`)
 }
 
 export function toDayView(day: TakwimDay): DayView {
@@ -204,8 +211,10 @@ export function toDayView(day: TakwimDay): DayView {
       year: day.hijri_year,
       month: month?.month ?? 0,
       day: day.hijri_day,
-      code: day.hijri_month_code,
-      nameMs: day.hijri_month_name,
+      codeMs: day.hijri_month_code_ms,
+      codeEn: day.hijri_month_code_en,
+      nameMs: day.hijri_month_name_ms,
+      nameEn: day.hijri_month_name_en,
       display: day.hijri_date,
     },
     estimated: day.estimated,

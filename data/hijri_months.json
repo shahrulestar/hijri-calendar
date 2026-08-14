@@ -22,360 +22,396 @@
       "month": 1,
       "nameMs": "Muharam",
       "nameEn": "Muharram",
-      "code": "MUH",
       "start": "2025-06-27",
       "end": "2025-07-26",
-      "days": 30
+      "days": 30,
+      "codeMs": "MUH",
+      "codeEn": "MUH"
     },
     {
       "year": 1447,
       "month": 2,
       "nameMs": "Safar",
       "nameEn": "Safar",
-      "code": "SAF",
       "start": "2025-07-27",
       "end": "2025-08-24",
-      "days": 29
+      "days": 29,
+      "codeMs": "SAF",
+      "codeEn": "SAF"
     },
     {
       "year": 1447,
       "month": 3,
       "nameMs": "Rabiulawal",
       "nameEn": "Rabi' al-Awwal",
-      "code": "RAW",
       "start": "2025-08-25",
       "end": "2025-09-23",
-      "days": 30
+      "days": 30,
+      "codeMs": "RAW",
+      "codeEn": "RA1"
     },
     {
       "year": 1447,
       "month": 4,
       "nameMs": "Rabiulakhir",
       "nameEn": "Rabi' al-Thani",
-      "code": "RAK",
       "start": "2025-09-24",
       "end": "2025-10-23",
-      "days": 30
+      "days": 30,
+      "codeMs": "RAK",
+      "codeEn": "RA2"
     },
     {
       "year": 1447,
       "month": 5,
       "nameMs": "Jamadilawal",
-      "nameEn": "Jumada al-Awwal",
-      "code": "JAW",
+      "nameEn": "Jumada al-Ula",
       "start": "2025-10-24",
       "end": "2025-11-22",
-      "days": 30
+      "days": 30,
+      "codeMs": "JAW",
+      "codeEn": "JM1"
     },
     {
       "year": 1447,
       "month": 6,
       "nameMs": "Jamadilakhir",
       "nameEn": "Jumada al-Thani",
-      "code": "JAK",
       "start": "2025-11-23",
       "end": "2025-12-21",
-      "days": 29
+      "days": 29,
+      "codeMs": "JAK",
+      "codeEn": "JM2"
     },
     {
       "year": 1447,
       "month": 7,
       "nameMs": "Rejab",
       "nameEn": "Rajab",
-      "code": "REJ",
       "start": "2025-12-22",
       "end": "2026-01-19",
-      "days": 29
+      "days": 29,
+      "codeMs": "REJ",
+      "codeEn": "RAJ"
     },
     {
       "year": 1447,
       "month": 8,
       "nameMs": "Syaaban",
       "nameEn": "Sha'ban",
-      "code": "SYA",
       "start": "2026-01-20",
       "end": "2026-02-18",
-      "days": 30
+      "days": 30,
+      "codeMs": "SYA",
+      "codeEn": "SHA"
     },
     {
       "year": 1447,
       "month": 9,
       "nameMs": "Ramadan",
       "nameEn": "Ramadan",
-      "code": "RAM",
       "start": "2026-02-19",
       "end": "2026-03-20",
-      "days": 30
+      "days": 30,
+      "codeMs": "RAM",
+      "codeEn": "RAM"
     },
     {
       "year": 1447,
       "month": 10,
       "nameMs": "Syawal",
       "nameEn": "Shawwal",
-      "code": "SYW",
       "start": "2026-03-21",
       "end": "2026-04-18",
-      "days": 29
+      "days": 29,
+      "codeMs": "SYW",
+      "codeEn": "SHW"
     },
     {
       "year": 1447,
       "month": 11,
       "nameMs": "Zulkaedah",
       "nameEn": "Dhu al-Qi'dah",
-      "code": "ZKD",
       "start": "2026-04-19",
       "end": "2026-05-17",
-      "days": 29
+      "days": 29,
+      "codeMs": "ZKD",
+      "codeEn": "DHQ"
     },
     {
       "year": 1447,
       "month": 12,
       "nameMs": "Zulhijah",
       "nameEn": "Dhu al-Hijjah",
-      "code": "ZHJ",
       "start": "2026-05-18",
       "end": "2026-06-16",
-      "days": 30
+      "days": 30,
+      "codeMs": "ZHJ",
+      "codeEn": "DHJ"
     },
     {
       "year": 1448,
       "month": 1,
       "nameMs": "Muharam",
       "nameEn": "Muharram",
-      "code": "MUH",
       "start": "2026-06-17",
       "end": "2026-07-15",
-      "days": 29
+      "days": 29,
+      "codeMs": "MUH",
+      "codeEn": "MUH"
     },
     {
       "year": 1448,
       "month": 2,
       "nameMs": "Safar",
       "nameEn": "Safar",
-      "code": "SAF",
       "start": "2026-07-16",
       "end": "2026-08-13",
-      "days": 29
+      "days": 29,
+      "codeMs": "SAF",
+      "codeEn": "SAF"
     },
     {
       "year": 1448,
       "month": 3,
       "nameMs": "Rabiulawal",
       "nameEn": "Rabi' al-Awwal",
-      "code": "RAW",
       "start": "2026-08-14",
       "end": "2026-09-12",
-      "days": 30
+      "days": 30,
+      "codeMs": "RAW",
+      "codeEn": "RA1"
     },
     {
       "year": 1448,
       "month": 4,
       "nameMs": "Rabiulakhir",
       "nameEn": "Rabi' al-Thani",
-      "code": "RAK",
       "start": "2026-09-13",
       "end": "2026-10-11",
-      "days": 29
+      "days": 29,
+      "codeMs": "RAK",
+      "codeEn": "RA2"
     },
     {
       "year": 1448,
       "month": 5,
       "nameMs": "Jamadilawal",
-      "nameEn": "Jumada al-Awwal",
-      "code": "JAW",
+      "nameEn": "Jumada al-Ula",
       "start": "2026-10-12",
       "end": "2026-11-10",
-      "days": 30
+      "days": 30,
+      "codeMs": "JAW",
+      "codeEn": "JM1"
     },
     {
       "year": 1448,
       "month": 6,
       "nameMs": "Jamadilakhir",
       "nameEn": "Jumada al-Thani",
-      "code": "JAK",
       "start": "2026-11-11",
       "end": "2026-12-10",
-      "days": 30
+      "days": 30,
+      "codeMs": "JAK",
+      "codeEn": "JM2"
     },
     {
       "year": 1448,
       "month": 7,
       "nameMs": "Rejab",
       "nameEn": "Rajab",
-      "code": "REJ",
       "start": "2026-12-11",
       "end": "2027-01-09",
-      "days": 30
+      "days": 30,
+      "codeMs": "REJ",
+      "codeEn": "RAJ"
     },
     {
       "year": 1448,
       "month": 8,
       "nameMs": "Syaaban",
       "nameEn": "Sha'ban",
-      "code": "SYA",
       "start": "2027-01-10",
       "end": "2027-02-07",
-      "days": 29
+      "days": 29,
+      "codeMs": "SYA",
+      "codeEn": "SHA"
     },
     {
       "year": 1448,
       "month": 9,
       "nameMs": "Ramadan",
       "nameEn": "Ramadan",
-      "code": "RAM",
       "start": "2027-02-08",
       "end": "2027-03-09",
-      "days": 30
+      "days": 30,
+      "codeMs": "RAM",
+      "codeEn": "RAM"
     },
     {
       "year": 1448,
       "month": 10,
       "nameMs": "Syawal",
       "nameEn": "Shawwal",
-      "code": "SYW",
       "start": "2027-03-10",
       "end": "2027-04-08",
-      "days": 30
+      "days": 30,
+      "codeMs": "SYW",
+      "codeEn": "SHW"
     },
     {
       "year": 1448,
       "month": 11,
       "nameMs": "Zulkaedah",
       "nameEn": "Dhu al-Qi'dah",
-      "code": "ZKD",
       "start": "2027-04-09",
       "end": "2027-05-07",
-      "days": 29
+      "days": 29,
+      "codeMs": "ZKD",
+      "codeEn": "DHQ"
     },
     {
       "year": 1448,
       "month": 12,
       "nameMs": "Zulhijah",
       "nameEn": "Dhu al-Hijjah",
-      "code": "ZHJ",
       "start": "2027-05-08",
       "end": "2027-06-05",
-      "days": 29
+      "days": 29,
+      "codeMs": "ZHJ",
+      "codeEn": "DHJ"
     },
     {
       "year": 1449,
       "month": 1,
       "nameMs": "Muharam",
       "nameEn": "Muharram",
-      "code": "MUH",
       "start": "2027-06-06",
       "end": "2027-07-05",
-      "days": 30
+      "days": 30,
+      "codeMs": "MUH",
+      "codeEn": "MUH"
     },
     {
       "year": 1449,
       "month": 2,
       "nameMs": "Safar",
       "nameEn": "Safar",
-      "code": "SAF",
       "start": "2027-07-06",
       "end": "2027-08-03",
-      "days": 29
+      "days": 29,
+      "codeMs": "SAF",
+      "codeEn": "SAF"
     },
     {
       "year": 1449,
       "month": 3,
       "nameMs": "Rabiulawal",
       "nameEn": "Rabi' al-Awwal",
-      "code": "RAW",
       "start": "2027-08-04",
       "end": "2027-09-01",
-      "days": 29
+      "days": 29,
+      "codeMs": "RAW",
+      "codeEn": "RA1"
     },
     {
       "year": 1449,
       "month": 4,
       "nameMs": "Rabiulakhir",
       "nameEn": "Rabi' al-Thani",
-      "code": "RAK",
       "start": "2027-09-02",
       "end": "2027-10-01",
-      "days": 30
+      "days": 30,
+      "codeMs": "RAK",
+      "codeEn": "RA2"
     },
     {
       "year": 1449,
       "month": 5,
       "nameMs": "Jamadilawal",
-      "nameEn": "Jumada al-Awwal",
-      "code": "JAW",
+      "nameEn": "Jumada al-Ula",
       "start": "2027-10-02",
       "end": "2027-10-30",
-      "days": 29
+      "days": 29,
+      "codeMs": "JAW",
+      "codeEn": "JM1"
     },
     {
       "year": 1449,
       "month": 6,
       "nameMs": "Jamadilakhir",
       "nameEn": "Jumada al-Thani",
-      "code": "JAK",
       "start": "2027-10-31",
       "end": "2027-11-29",
-      "days": 30
+      "days": 30,
+      "codeMs": "JAK",
+      "codeEn": "JM2"
     },
     {
       "year": 1449,
       "month": 7,
       "nameMs": "Rejab",
       "nameEn": "Rajab",
-      "code": "REJ",
       "start": "2027-11-30",
       "end": "2027-12-28",
-      "days": 29
+      "days": 29,
+      "codeMs": "REJ",
+      "codeEn": "RAJ"
     },
     {
       "year": 1449,
       "month": 8,
       "nameMs": "Syaaban",
       "nameEn": "Sha'ban",
-      "code": "SYA",
       "start": "2027-12-29",
       "end": "2028-01-27",
-      "days": 30
+      "days": 30,
+      "codeMs": "SYA",
+      "codeEn": "SHA"
     },
     {
       "year": 1449,
       "month": 9,
       "nameMs": "Ramadan",
       "nameEn": "Ramadan",
-      "code": "RAM",
       "start": "2028-01-28",
       "end": "2028-02-26",
-      "days": 30
+      "days": 30,
+      "codeMs": "RAM",
+      "codeEn": "RAM"
     },
     {
       "year": 1449,
       "month": 10,
       "nameMs": "Syawal",
       "nameEn": "Shawwal",
-      "code": "SYW",
       "start": "2028-02-27",
       "end": "2028-03-26",
-      "days": 29
+      "days": 29,
+      "codeMs": "SYW",
+      "codeEn": "SHW"
     },
     {
       "year": 1449,
       "month": 11,
       "nameMs": "Zulkaedah",
       "nameEn": "Dhu al-Qi'dah",
-      "code": "ZKD",
       "start": "2028-03-27",
       "end": "2028-04-25",
-      "days": 30
+      "days": 30,
+      "codeMs": "ZKD",
+      "codeEn": "DHQ"
     },
     {
       "year": 1449,
       "month": 12,
       "nameMs": "Zulhijah",
       "nameEn": "Dhu al-Hijjah",
-      "code": "ZHJ",
       "start": "2028-04-26",
       "end": "2028-05-24",
-      "days": 29
+      "days": 29,
+      "codeMs": "ZHJ",
+      "codeEn": "DHJ"
     }
   ]
 }
