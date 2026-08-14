@@ -12,7 +12,16 @@ export const LANDING_HTML = `<!DOCTYPE html>
       --muted: #737373;
       --border: #e5e5e5;
       --card: #fff;
+      --hover: #f5f5f5;
       --radius: 0.625rem;
+    }
+    html.dark {
+      --bg: #0a0a0a;
+      --fg: #fafafa;
+      --muted: #a3a3a3;
+      --border: #262626;
+      --card: #171717;
+      --hover: #262626;
     }
     * { box-sizing: border-box; }
     body {
@@ -106,7 +115,7 @@ export const LANDING_HTML = `<!DOCTYPE html>
       color: var(--muted);
       cursor: pointer;
     }
-    .copy:hover { background: #f5f5f5; color: var(--fg); }
+    .copy:hover { background: var(--hover); color: var(--fg); }
     .copy svg { width: 1rem; height: 1rem; }
     .tools { display: flex; flex-direction: column; gap: 0.625rem; }
     .tool {
@@ -120,21 +129,18 @@ export const LANDING_HTML = `<!DOCTYPE html>
     .tool code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-weight: 500; }
     .tool p { margin: 0; color: var(--muted); }
     .alert {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      column-gap: 0.625rem;
-      row-gap: 0.125rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.125rem;
       padding: 0.75rem 1rem;
       border: 1px solid var(--border);
       border-radius: 0.5rem;
       font-size: 0.875rem;
     }
-    .alert svg:first-child { width: 1rem; height: 1rem; margin-top: 0.125rem; grid-row: 1 / 4; }
     .alert strong { font-weight: 500; }
-    .alert p { margin: 0; color: var(--muted); grid-column: 2; }
+    .alert p { margin: 0; color: var(--muted); }
     .alert a { color: inherit; }
     .github {
-      grid-column: 2;
       margin-top: 0.5rem;
       display: inline-flex;
       width: fit-content;
@@ -150,9 +156,19 @@ export const LANDING_HTML = `<!DOCTYPE html>
       font-weight: 500;
       text-decoration: none;
     }
-    .github:hover { background: #f5f5f5; }
+    .github:hover { background: var(--hover); }
     .github svg { width: 1rem; height: 1rem; }
   </style>
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("theme");
+        if (stored === "dark" || (!stored && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <main>
@@ -194,26 +210,25 @@ export const LANDING_HTML = `<!DOCTYPE html>
     <section class="card">
       <div class="card-head">
         <h2 class="card-title">Tools</h2>
-        <p class="card-desc">What AI clients can ask this server.</p>
+        <p class="card-desc">Month summary, day-by-day takwim, and Islamic observances.</p>
       </div>
       <div class="card-body tools">
         <div class="tool">
           <code>get_lunar_months</code>
-          <p>Look up Hijri months, or find which month covers a Gregorian date.</p>
+          <p>Month summary: Hijri month start, end, and length. Use for “when is Ramadan?” or which month covers a Gregorian date.</p>
         </div>
         <div class="tool">
           <code>get_hijri_calendar</code>
-          <p>Look up day-by-day Hijri takwim by date, Hijri month, or Gregorian range.</p>
+          <p>Day-by-day takwim: Hijri date and weekday for one day, a Hijri month, or a short Gregorian range.</p>
         </div>
         <div class="tool">
           <code>get_islamic_events</code>
-          <p>Look up important Islamic dates and observances in Malaysia.</p>
+          <p>Important Islamic dates in Malaysia — Aidilfitri, Aidiladha, Maulid, Awal Ramadan, and other observances.</p>
         </div>
       </div>
     </section>
 
     <aside class="alert">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
       <strong>Data source</strong>
       <p>Calendar data follows Malaysia time (Asia/Kuala_Lumpur) and is verified against <a href="https://www.e-solat.gov.my/index.php?siteId=24&amp;pageId=26" target="_blank" rel="noreferrer">JAKIM e-Solat</a>. Some later dates may still change after official moon-sighting announcements.</p>
       <a class="github" href="https://github.com/shahrulestar/islamic-calendar-mcp" target="_blank" rel="noreferrer">
@@ -223,6 +238,52 @@ export const LANDING_HTML = `<!DOCTYPE html>
     </aside>
   </main>
   <script>
+    const copyIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+    const tickIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>';
+
+    function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text).catch(function () {
+          return copyTextFallback(text);
+        });
+      }
+      return Promise.resolve(copyTextFallback(text));
+    }
+
+    function copyTextFallback(text) {
+      const area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "fixed";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      const ok = document.execCommand("copy");
+      document.body.removeChild(area);
+      if (!ok) throw new Error("copy failed");
+    }
+
+    function isTypingTarget(target) {
+      if (!(target instanceof HTMLElement)) return false;
+      if (target.isContentEditable) return true;
+      if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement) {
+        return !target.readOnly && !target.disabled;
+      }
+      return target.tagName === "SELECT";
+    }
+
+    const root = document.documentElement;
+
+    window.addEventListener("keydown", function (event) {
+      if (event.defaultPrevented || event.repeat) return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (event.key.toLowerCase() !== "d") return;
+      if (isTypingTarget(event.target)) return;
+      const next = root.classList.contains("dark") ? "light" : "dark";
+      root.classList.toggle("dark", next === "dark");
+      localStorage.setItem("theme", next);
+    });
+
     const sources = {
       url: document.getElementById("mcp-url").value,
       config: document.getElementById("mcp-config").textContent,
@@ -231,7 +292,13 @@ export const LANDING_HTML = `<!DOCTYPE html>
       button.addEventListener("click", async () => {
         const key = button.getAttribute("data-copy");
         try {
-          await navigator.clipboard.writeText(sources[key]);
+          await copyText(sources[key]);
+          button.innerHTML = tickIcon;
+          button.setAttribute("aria-label", "Copied");
+          setTimeout(function () {
+            button.innerHTML = copyIcon;
+            button.setAttribute("aria-label", "Copy");
+          }, 1500);
         } catch {}
       });
     });

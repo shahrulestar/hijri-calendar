@@ -26,12 +26,16 @@ function isTypingTarget(target: EventTarget | null) {
     return false
   }
 
-  return (
-    target.isContentEditable ||
-    target.tagName === "INPUT" ||
-    target.tagName === "TEXTAREA" ||
-    target.tagName === "SELECT"
-  )
+  if (target.isContentEditable) return true
+
+  if (
+    target instanceof HTMLInputElement ||
+    target instanceof HTMLTextAreaElement
+  ) {
+    return !target.readOnly && !target.disabled
+  }
+
+  return target.tagName === "SELECT"
 }
 
 function ThemeHotkey() {

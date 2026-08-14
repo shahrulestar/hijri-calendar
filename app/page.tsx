@@ -1,4 +1,4 @@
-import { GithubIcon, InformationCircleIcon } from "@hugeicons/core-free-icons"
+import { GithubIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 
 import { CopyButton } from "@/components/copy-button"
@@ -29,17 +29,17 @@ const TOOLS = [
   {
     name: "get_lunar_months",
     description:
-      "Look up Hijri months, or find which month covers a Gregorian date.",
+      "Month summary: Hijri month start, end, and length. Use for “when is Ramadan?” or which month covers a Gregorian date.",
   },
   {
     name: "get_hijri_calendar",
     description:
-      "Look up day-by-day Hijri takwim by date, Hijri month, or Gregorian range.",
+      "Day-by-day takwim: Hijri date and weekday for one day, a Hijri month, or a short Gregorian range.",
   },
   {
     name: "get_islamic_events",
     description:
-      "Look up important Islamic dates and observances in Malaysia.",
+      "Important Islamic dates in Malaysia — Aidilfitri, Aidiladha, Maulid, Awal Ramadan, and other observances.",
   },
 ] as const
 
@@ -110,7 +110,7 @@ export default function Page() {
         <CardHeader>
           <CardTitle>Tools</CardTitle>
           <CardDescription>
-            What AI clients can ask this server.
+            Month summary, day-by-day takwim, and Islamic observances.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -129,8 +129,7 @@ export default function Page() {
         </CardContent>
       </Card>
 
-      <Alert>
-        <HugeiconsIcon icon={InformationCircleIcon} />
+      <Alert className="grid-cols-1">
         <AlertTitle>Data source</AlertTitle>
         <AlertDescription>
           Calendar data follows Malaysia time (Asia/Kuala_Lumpur) and is verified
@@ -141,7 +140,7 @@ export default function Page() {
           . Some later dates may still change after official moon-sighting
           announcements.
         </AlertDescription>
-        <div className="col-start-2 mt-2">
+        <div className="mt-2">
           <Button
             variant="outline"
             size="sm"

@@ -21,9 +21,9 @@ https://islam-calendar.shahrulestar.com/mcp
 
 | Tool | What it does |
 |------|----------------|
-| `get_lunar_months` | Look up Hijri months, or find which month covers a Gregorian date |
-| `get_hijri_calendar` | Look up day-by-day Hijri takwim (date, Hijri month, or Gregorian range) |
-| `get_islamic_events` | Look up important Islamic dates and observances in Malaysia |
+| `get_lunar_months` | **Month summary.** Start, end, and length of each Hijri month. Use for “when is Ramadan?” or which month covers a Gregorian date. |
+| `get_hijri_calendar` | **Day-by-day takwim.** Hijri date and weekday for one day, a Hijri month, or a short Gregorian range. |
+| `get_islamic_events` | **Observances in Malaysia.** Aidilfitri, Aidiladha, Maulid, Awal Ramadan, and other important Islamic dates. |
 
 ## Data source
 

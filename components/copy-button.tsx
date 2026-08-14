@@ -11,12 +11,38 @@ interface CopyButtonProps {
   className?: string
 }
 
+function copyTextFallback(text: string) {
+  const area = document.createElement("textarea")
+  area.value = text
+  area.setAttribute("readonly", "")
+  area.style.position = "fixed"
+  area.style.left = "-9999px"
+  document.body.appendChild(area)
+  area.select()
+  const ok = document.execCommand("copy")
+  document.body.removeChild(area)
+  if (!ok) throw new Error("copy failed")
+}
+
+async function copyText(text: string) {
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text)
+      return
+    } catch {
+      copyTextFallback(text)
+      return
+    }
+  }
+  copyTextFallback(text)
+}
+
 export function CopyButton({ value, className }: CopyButtonProps) {
   const [copied, setCopied] = useState(false)
 
   async function handleCopy() {
     try {
-      await navigator.clipboard.writeText(value)
+      await copyText(value)
       setCopied(true)
       window.setTimeout(() => setCopied(false), 1500)
     } catch {
