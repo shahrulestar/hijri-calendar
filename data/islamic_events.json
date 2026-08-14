@@ -1,7 +1,7 @@
 {
   "timezone": "Asia/Kuala_Lumpur",
-  "source": "https://www.e-solat.gov.my/index.php?siteId=24&pageId=26",
-  "note": "Confirmed JAKIM e-Solat dates are estimated=false. Other dates are derived from the Malaysia lunar month table (Asia/Kuala_Lumpur) and may change after official moon-sighting announcements.",
+  "source": "JAKIM takwim rasmi (Imkanur-rukyah) 2026–2027; https://www.e-solat.gov.my/index.php?siteId=24&pageId=26",
+  "note": "Confirmed JAKIM e-Solat dates are estimated=false. Gregorian dates follow the Malaysia daily takwim (Asia/Kuala_Lumpur). Later dates may change after official moon-sighting announcements.",
   "events": [
     {
       "year": 1447,
@@ -153,7 +153,7 @@
       "nameMs": "Israk dan Mikraj",
       "nameEn": "Isra' and Mi'raj (Night Journey and Ascension)",
       "type": "public_holiday",
-      "start": "2027-01-05",
+      "start": "2027-01-06",
       "end": null,
       "estimated": true
     },
@@ -164,7 +164,7 @@
       "nameMs": "Awal Ramadan / Berpuasa",
       "nameEn": "Beginning of Ramadan (start of fasting month)",
       "type": "public_holiday",
-      "start": "2027-02-07",
+      "start": "2027-02-08",
       "end": null,
       "estimated": true
     },
@@ -175,7 +175,7 @@
       "nameMs": "Nuzul al-Quran",
       "nameEn": "Nuzul al-Quran (Revelation of the Quran)",
       "type": "public_holiday",
-      "start": "2027-02-23",
+      "start": "2027-02-24",
       "end": null,
       "estimated": true
     },
@@ -186,7 +186,7 @@
       "nameMs": "Peristiwa Perang Badr",
       "nameEn": "The Battle of Badr",
       "type": "historical",
-      "start": "2027-02-23",
+      "start": "2027-02-24",
       "end": null,
       "estimated": true
     },
@@ -197,7 +197,7 @@
       "nameMs": "Pembukaan Kota Mekah (Fathul Makkah)",
       "nameEn": "The Conquest of Mecca",
       "type": "historical",
-      "start": "2027-02-26",
+      "start": "2027-02-27",
       "end": null,
       "estimated": true
     },
@@ -208,7 +208,7 @@
       "nameMs": "Hari Raya Puasa / Aidilfitri",
       "nameEn": "Eid al-Fitr",
       "type": "public_holiday",
-      "start": "2027-03-09",
+      "start": "2027-03-10",
       "end": null,
       "estimated": true
     },
@@ -219,7 +219,7 @@
       "nameMs": "Peristiwa Perang Uhud",
       "nameEn": "The Battle of Uhud",
       "type": "historical",
-      "start": "2027-03-15",
+      "start": "2027-03-16",
       "end": null,
       "estimated": true
     },
@@ -230,7 +230,7 @@
       "nameMs": "Awal Zulhijah",
       "nameEn": "Beginning of Dhu al-Hijjah",
       "type": "public_holiday",
-      "start": "2027-05-07",
+      "start": "2027-05-08",
       "end": null,
       "estimated": true
     },
@@ -241,8 +241,8 @@
       "nameMs": "10 Hari Pertama Zulhijjah",
       "nameEn": "First 10 Days of Dhu al-Hijjah",
       "type": "voluntary",
-      "start": "2027-05-07",
-      "end": "2027-05-16",
+      "start": "2027-05-08",
+      "end": "2027-05-17",
       "estimated": true
     },
     {
@@ -252,7 +252,7 @@
       "nameMs": "Hari Arafah",
       "nameEn": "Day of Arafah",
       "type": "ritual",
-      "start": "2027-05-15",
+      "start": "2027-05-16",
       "end": null,
       "estimated": true
     },
@@ -263,7 +263,7 @@
       "nameMs": "Khutbah Terakhir & Pengharaman Nasi'",
       "nameEn": "The Farewell Sermon & Ban on Nasi'",
       "type": "historical",
-      "start": "2027-05-15",
+      "start": "2027-05-16",
       "end": null,
       "estimated": true
     },
@@ -274,7 +274,7 @@
       "nameMs": "Hari Raya Korban / Aidiladha",
       "nameEn": "Eid al-Adha",
       "type": "public_holiday",
-      "start": "2027-05-16",
+      "start": "2027-05-17",
       "end": null,
       "estimated": true
     },
@@ -285,8 +285,8 @@
       "nameMs": "Hari-hari Tasyrik",
       "nameEn": "Days of Tashreeq",
       "type": "ritual",
-      "start": "2027-05-17",
-      "end": "2027-05-19",
+      "start": "2027-05-18",
+      "end": "2027-05-20",
       "estimated": true
     },
     {

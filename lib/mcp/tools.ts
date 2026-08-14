@@ -4,9 +4,11 @@ import { z } from "zod"
 import {
   formatJson,
   getMonth,
+  listDays,
   listMonths,
   lookupDate,
   orderCalendarFields,
+  toDayView,
   toMonthView,
   type CalendarMode,
 } from "@/lib/hijri/calendar"
@@ -81,6 +83,7 @@ export function registerTools(server: McpServer) {
                   {
                     hijri: result.hijri,
                     gregorian: result.gregorian,
+                    estimated: result.estimated,
                   },
                   mode,
                 ),
@@ -123,6 +126,87 @@ export function registerTools(server: McpServer) {
               listMonths({ year }).map((entry) =>
                 orderCalendarFields(toMonthView(entry), mode),
               ),
+            ),
+          },
+        ],
+      }
+    },
+  )
+
+  server.registerTool(
+    "get_hijri_calendar",
+    {
+      title: "Get Hijri Calendar",
+      description:
+        "Get day-by-day Malaysian Hijri takwim (1447H–1449H, Asia/Kuala_Lumpur). Requires a filter: a Gregorian date, a Hijri year+month, or a Gregorian from+to range (max 62 days). Days outside the official JAKIM 2026–2027 takwim are estimated=true.",
+      inputSchema: z.object({
+        date: z
+          .string()
+          .regex(/^\d{4}-\d{2}-\d{2}$/)
+          .optional()
+          .describe("Gregorian ISO date (YYYY-MM-DD)"),
+        year: z
+          .number()
+          .int()
+          .min(1447)
+          .max(1449)
+          .optional()
+          .describe("Hijri year (requires month)"),
+        month: z
+          .number()
+          .int()
+          .min(1)
+          .max(12)
+          .optional()
+          .describe("Hijri month order 1–12 (requires year)"),
+        from: z
+          .string()
+          .regex(/^\d{4}-\d{2}-\d{2}$/)
+          .optional()
+          .describe("Gregorian range start (requires to, max 62 days)"),
+        to: z
+          .string()
+          .regex(/^\d{4}-\d{2}-\d{2}$/)
+          .optional()
+          .describe("Gregorian range end (requires from, max 62 days)"),
+        calendar: calendarSchema,
+      }),
+    },
+    async ({ date, year, month, from, to, calendar }) => {
+      const mode = resolveCalendar(calendar)
+      const result = listDays({
+        date,
+        hijriYear: year,
+        month,
+        from,
+        to,
+      })
+
+      if ("error" in result) {
+        return {
+          content: [{ type: "text", text: result.error }],
+          isError: true,
+        }
+      }
+
+      if (result.length === 0) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: "No takwim days matched. Data covers 1447H–1449H only.",
+            },
+          ],
+          isError: true,
+        }
+      }
+
+      return {
+        content: [
+          {
+            type: "text",
+            text: formatJson(
+              result.map((day) => orderCalendarFields(toDayView(day), mode)),
             ),
           },
         ],

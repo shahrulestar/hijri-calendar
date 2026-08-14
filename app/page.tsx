@@ -32,6 +32,11 @@ const TOOLS = [
       "Look up Hijri months, or find which month covers a Gregorian date.",
   },
   {
+    name: "get_hijri_calendar",
+    description:
+      "Look up day-by-day Hijri takwim by date, Hijri month, or Gregorian range.",
+  },
+  {
     name: "get_islamic_events",
     description:
       "Look up important Islamic dates and observances in Malaysia.",

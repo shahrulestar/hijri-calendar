@@ -202,6 +202,10 @@ export const LANDING_HTML = `<!DOCTYPE html>
           <p>Look up Hijri months, or find which month covers a Gregorian date.</p>
         </div>
         <div class="tool">
+          <code>get_hijri_calendar</code>
+          <p>Look up day-by-day Hijri takwim by date, Hijri month, or Gregorian range.</p>
+        </div>
+        <div class="tool">
           <code>get_islamic_events</code>
           <p>Look up important Islamic dates and observances in Malaysia.</p>
         </div>

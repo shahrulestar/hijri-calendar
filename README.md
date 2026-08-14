@@ -13,6 +13,7 @@ https://islam-calendar.shahrulestar.com/mcp
 ## What it covers
 
 - Hijri lunar months (1447H–1449H)
+- Day-by-day Hijri takwim (1447H–1449H)
 - Important Islamic dates and observances in Malaysia
 - Matching Hijri and Gregorian (Miladi) dates
 
@@ -21,6 +22,7 @@ https://islam-calendar.shahrulestar.com/mcp
 | Tool | What it does |
 |------|----------------|
 | `get_lunar_months` | Look up Hijri months, or find which month covers a Gregorian date |
+| `get_hijri_calendar` | Look up day-by-day Hijri takwim (date, Hijri month, or Gregorian range) |
 | `get_islamic_events` | Look up important Islamic dates and observances in Malaysia |
 
 ## Data source
@@ -29,4 +31,4 @@ Calendar data follows Malaysia timezone (`Asia/Kuala_Lumpur`) and is verified ag
 
 [JAKIM Islamic Calendar](https://www.e-solat.gov.my/index.php?siteId=24&pageId=26)
 
-Confirmed JAKIM dates are used as-is. Later dates are estimated from the lunar month table and may change after official moon-sighting announcements — this server never advances an event earlier than its Hijri day on that table.
+Confirmed JAKIM dates are used as-is. Official JAKIM takwim days (2026–2027) are `estimated=false`. Later dates are estimated from the lunar month table and may change after official moon-sighting announcements — this server never advances an event earlier than its Hijri day on that table.

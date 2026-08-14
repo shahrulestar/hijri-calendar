@@ -1,4 +1,5 @@
 import data from "../../data/hijri_months.json"
+import takwim from "../../data/takwim_hijri.json"
 
 export interface HijriMonth {
   year: number
@@ -43,13 +44,59 @@ export interface DateLookupView {
     display: string
   }
   gregorian: { iso: string }
+  estimated: boolean
   month: MonthView
+}
+
+export interface TakwimDay {
+  gregorian_date: string
+  day_name: string
+  day_code: string
+  hijri_date: string
+  hijri_year: number
+  hijri_month_code: string
+  hijri_month_name: string
+  hijri_day: number
+  estimated: boolean
+}
+
+export interface DayView {
+  gregorian: { iso: string; dayName: string; dayCode: string }
+  hijri: {
+    year: number
+    month: number
+    day: number
+    code: string
+    nameMs: string
+    display: string
+  }
+  estimated: boolean
+}
+
+export interface ListDaysFilters {
+  date?: string
+  hijriYear?: number
+  month?: number
+  from?: string
+  to?: string
 }
 
 const months = data.months as HijriMonth[]
 const years = data.years as HijriYearSummary[]
+const monthByCode = new Map(
+  months.map((entry) => [`${entry.year}:${entry.code}`, entry] as const),
+)
+
+const takwimDays: TakwimDay[] = Object.values(
+  takwim.years as Record<string, { days: TakwimDay[] }>,
+).flatMap((year) => year.days)
+
+const daysByDate = new Map(
+  takwimDays.map((day) => [day.gregorian_date, day] as const),
+)
 
 const TIMEZONE = "Asia/Kuala_Lumpur"
+const MAX_DAY_RANGE = 62
 
 function parseIsoDate(iso: string): Date {
   const [year, month, day] = iso.split("-").map(Number)
@@ -141,29 +188,95 @@ export function getTodayIso(): string {
   }).format(new Date())
 }
 
+function monthForDay(day: TakwimDay): HijriMonth | undefined {
+  return monthByCode.get(`${day.hijri_year}:${day.hijri_month_code}`)
+}
+
+export function toDayView(day: TakwimDay): DayView {
+  const month = monthForDay(day)
+  return {
+    gregorian: {
+      iso: day.gregorian_date,
+      dayName: day.day_name,
+      dayCode: day.day_code,
+    },
+    hijri: {
+      year: day.hijri_year,
+      month: month?.month ?? 0,
+      day: day.hijri_day,
+      code: day.hijri_month_code,
+      nameMs: day.hijri_month_name,
+      display: day.hijri_date,
+    },
+    estimated: day.estimated,
+  }
+}
+
 export function lookupDate(date?: string): DateLookupView | undefined {
   const targetDate = date ?? getTodayIso()
-  const month = months.find((entry) =>
-    isWithinRange(targetDate, entry.start, entry.end),
-  )
+  const day = daysByDate.get(targetDate)
+  if (!day) return undefined
 
+  const month = monthForDay(day)
   if (!month) return undefined
-
-  const start = parseIsoDate(month.start)
-  const current = parseIsoDate(targetDate)
-  const day =
-    Math.floor((current.getTime() - start.getTime()) / 86_400_000) + 1
 
   return {
     hijri: {
       year: month.year,
       month: month.month,
-      day,
-      display: formatHijriDate(day, month.nameMs, month.year),
+      day: day.hijri_day,
+      display: formatHijriDate(day.hijri_day, month.nameMs, month.year),
     },
     gregorian: { iso: targetDate },
+    estimated: day.estimated,
     month: toMonthView(month),
   }
+}
+
+export function listDays(filters: ListDaysFilters): TakwimDay[] | { error: string } {
+  const { date, hijriYear, month, from, to } = filters
+  const hasDate = date !== undefined
+  const hasHijriMonth = hijriYear !== undefined && month !== undefined
+  const hasRange = from !== undefined && to !== undefined
+
+  if (!hasDate && !hasHijriMonth && !hasRange) {
+    return {
+      error:
+        "Provide date, year+month (Hijri), or from+to (Gregorian, max 62 days).",
+    }
+  }
+
+  if ((from !== undefined) !== (to !== undefined)) {
+    return { error: "from and to must be provided together." }
+  }
+
+  if (month !== undefined && hijriYear === undefined) {
+    return { error: "month requires year (Hijri)." }
+  }
+
+  if (hasRange) {
+    if (from > to) return { error: "from must be on or before to." }
+    const start = parseIsoDate(from)
+    const end = parseIsoDate(to)
+    const span =
+      Math.floor((end.getTime() - start.getTime()) / 86_400_000) + 1
+    if (span > MAX_DAY_RANGE) {
+      return {
+        error: `Gregorian range cannot exceed ${MAX_DAY_RANGE} days.`,
+      }
+    }
+  }
+
+  return takwimDays.filter((day) => {
+    if (hasDate && day.gregorian_date !== date) return false
+    if (hijriYear !== undefined && day.hijri_year !== hijriYear) return false
+    if (month !== undefined) {
+      const entry = monthForDay(day)
+      if (!entry || entry.month !== month) return false
+    }
+    if (hasRange && !isWithinRange(day.gregorian_date, from, to)) return false
+    return true
+  })
 }
 
 export function formatJson(value: unknown): string {
