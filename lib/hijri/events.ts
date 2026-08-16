@@ -1,5 +1,6 @@
 import {
-  events,
+  eventTemplates,
+  months,
   recurring,
   TIMEZONE,
 } from "./data"
@@ -18,17 +19,16 @@ export type EventType =
   | "voluntary"
   | "historical"
 
-export interface IslamicEvent {
-  year: number
+export interface EventTemplate {
   month: number
   day: number | string
   nameMs: string
   nameEn: string
   type: EventType
-  /** Stored Gregorian hint; runtime always re-derives from the lunar month table. */
-  start: string
-  end: string | null
-  estimated: boolean
+}
+
+export interface IslamicEvent extends EventTemplate {
+  year: number
 }
 
 export interface RecurringEvent {
@@ -45,7 +45,6 @@ export interface EventView {
   nameMs: string
   nameEn: string
   type: EventType
-  estimated: boolean
   timezone: "Asia/Kuala_Lumpur"
   hijri: {
     year: number
@@ -89,10 +88,7 @@ function parseDayRange(day: number | string): { startDay: number; endDay: number
   return { startDay: value, endDay: value }
 }
 
-/**
- * Resolve Gregorian range from the JAKIM lunar month table.
- * Never trusts stored event.start/end alone — prevents early/stale dates.
- */
+/** Resolve Gregorian range from the JAKIM lunar month table. */
 export function resolveEventGregorian(entry: Pick<IslamicEvent, "year" | "month" | "day">): {
   start: string
   end: string | null
@@ -118,6 +114,18 @@ export function resolveEventGregorian(entry: Pick<IslamicEvent, "year" | "month"
   return { start, end }
 }
 
+function eventFitsMonth(
+  template: EventTemplate,
+  monthDays: number,
+): boolean {
+  const { startDay, endDay } = parseDayRange(template.day)
+  return startDay >= 1 && endDay <= monthDays && startDay <= endDay
+}
+
+const hijriYears = [...new Set(months.map((entry) => entry.year))].sort(
+  (a, b) => a - b,
+)
+
 export function listEvents(filters?: {
   year?: number
   month?: number
@@ -125,21 +133,32 @@ export function listEvents(filters?: {
   date?: string
 }): IslamicEvent[] {
   const targetDate = filters?.date
+  const instances: IslamicEvent[] = []
 
-  return events.filter((entry) => {
-    if (filters?.year !== undefined && entry.year !== filters.year) return false
-    if (filters?.month !== undefined && entry.month !== filters.month)
-      return false
-    if (filters?.type !== undefined && entry.type !== filters.type) return false
+  for (const year of hijriYears) {
+    if (filters?.year !== undefined && year !== filters.year) continue
 
-    if (targetDate !== undefined) {
-      const { start, end } = resolveEventGregorian(entry)
-      const last = end ?? start
-      if (targetDate < start || targetDate > last) return false
+    for (const template of eventTemplates) {
+      if (filters?.month !== undefined && template.month !== filters.month)
+        continue
+      if (filters?.type !== undefined && template.type !== filters.type)
+        continue
+
+      const month = getMonth(year, template.month)
+      if (!month || !eventFitsMonth(template, month.days)) continue
+
+      const entry: IslamicEvent = { year, ...template }
+      if (targetDate !== undefined) {
+        const { start, end } = resolveEventGregorian(entry)
+        const last = end ?? start
+        if (targetDate < start || targetDate > last) continue
+      }
+
+      instances.push(entry)
     }
+  }
 
-    return true
-  })
+  return instances
 }
 
 export function listRecurringEvents(filters?: {
@@ -179,7 +198,6 @@ export function toEventView(
       nameMs: entry.nameMs,
       nameEn: entry.nameEn,
       type: entry.type,
-      estimated: entry.estimated,
       timezone: TIMEZONE,
       hijri: {
         year: entry.year,

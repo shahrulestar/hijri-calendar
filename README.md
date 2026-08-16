@@ -1,4 +1,6 @@
-# Islamic Calendar MCP
+![Hijri Calendar MCP](public/cover.png)
+
+# Hijri Calendar
 
 A remote MCP server for the Malaysian Islamic (Hijri) calendar.
 
@@ -7,7 +9,7 @@ It helps AI tools look up Hijri months, Gregorian dates, and important Islamic d
 ## Connect
 
 ```text
-https://islam-calendar.shahrulestar.com/mcp
+https://hijri.shahrulestar.com/mcp
 ```
 
 ## What it covers
@@ -31,8 +33,8 @@ Calendar files are split by **Gregorian year** under `data/takwim/`:
 
 | File | Contents |
 |------|----------|
-| `meta.json` | Timezone, month-name dictionaries, Hijri year summaries, recurring observances |
-| `2025.json`–`2028.json` | Day-by-day takwim, lunar months, and events whose Gregorian start falls in that year |
+| `meta.json` | Timezone, month-name dictionaries, Hijri year summaries, Islamic event templates, recurring observances |
+| `2025.json`–`2028.json` | Day-by-day takwim and lunar months |
 
 A Hijri month that spans New Year is stored in the year it **starts** (for example Sha’ban 1449H lives in `2027.json`). The MCP tools merge all years in memory, so lookups by Hijri year still work.
 
@@ -40,7 +42,7 @@ Calendar data follows Malaysia timezone (`Asia/Kuala_Lumpur`) and is verified ag
 
 [JAKIM Islamic Calendar](https://www.e-solat.gov.my/index.php?siteId=24&pageId=26)
 
-Confirmed JAKIM dates are used as-is. Official JAKIM takwim days (2026–2028) are `estimated=false`. Later dates are estimated from the lunar month table and may change after official moon-sighting announcements — this server never advances an event earlier than its Hijri day on that table.
+Islamic events are stored once as Hijri month+day templates and resolved to Gregorian dates from the lunar month table. This server never advances an event earlier than its Hijri day on that table.
 
 ## Sponsor
 

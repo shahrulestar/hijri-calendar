@@ -2,7 +2,7 @@
   "source": "JAKIM - Jabatan Kemajuan Islam Malaysia, SKF Bahagian Penyelidikan (Panel Pakar Falak JAKIM); e-Solat for confirmed event dates; JAKIM takwim rasmi (Imkanur-rukyah) 2026–2028; TARIKH-TARIKH PENTING DALAM ISLAM 2028 / 1449-1450H; https://www.e-solat.gov.my/index.php?siteId=24&pageId=26",
   "criteria": "Penentuan awal bulan hijriah adalah mengikut kriteria kebolehnampakan hilal Imkanur-rukyah (3 darjah tinggi hilal dan 6.4 darjah elongasi). 1 Muharram 1443H = 10 Ogos 2021",
   "timezone": "Asia/Kuala_Lumpur",
-  "note": "Days with estimated=false are from the official JAKIM takwim (2026-01-01 to 2028-12-31). Other days are derived from the Malaysia lunar month table and may change after official moon-sighting announcements.",
+  "note": "Calendar days and Islamic events follow the official JAKIM takwim for Malaysia (Asia/Kuala_Lumpur).",
   "day_names": {
     "A": "Ahad",
     "I": "Isnin",
@@ -57,6 +57,127 @@
       "year": 1449,
       "days": 355,
       "type": "leap (355 days)"
+    }
+  ],
+  "events": [
+    {
+      "month": 1,
+      "day": 1,
+      "nameMs": "Awal Muharam / Maal Hijrah",
+      "nameEn": "Islamic New Year (Awal Muharram / Maal Hijrah)",
+      "type": "public_holiday"
+    },
+    {
+      "month": 1,
+      "day": 10,
+      "nameMs": "Hari Asyura",
+      "nameEn": "Day of Ashura",
+      "type": "ritual"
+    },
+    {
+      "month": 3,
+      "day": 12,
+      "nameMs": "Maulidur Rasul",
+      "nameEn": "Birthday of the Prophet Muhammad (Mawlid al-Nabi)",
+      "type": "public_holiday"
+    },
+    {
+      "month": 3,
+      "day": 12,
+      "nameMs": "Peristiwa Hijrah Nabi",
+      "nameEn": "The Prophetic Migration (Hijrah)",
+      "type": "historical"
+    },
+    {
+      "month": 7,
+      "day": 27,
+      "nameMs": "Israk dan Mikraj",
+      "nameEn": "Isra' and Mi'raj (Night Journey and Ascension)",
+      "type": "public_holiday"
+    },
+    {
+      "month": 9,
+      "day": 1,
+      "nameMs": "Awal Ramadan / Berpuasa",
+      "nameEn": "Beginning of Ramadan (start of fasting month)",
+      "type": "public_holiday"
+    },
+    {
+      "month": 9,
+      "day": 17,
+      "nameMs": "Nuzul al-Quran",
+      "nameEn": "Nuzul al-Quran (Revelation of the Quran)",
+      "type": "public_holiday"
+    },
+    {
+      "month": 9,
+      "day": 17,
+      "nameMs": "Peristiwa Perang Badr",
+      "nameEn": "The Battle of Badr",
+      "type": "historical"
+    },
+    {
+      "month": 9,
+      "day": 20,
+      "nameMs": "Pembukaan Kota Mekah (Fathul Makkah)",
+      "nameEn": "The Conquest of Mecca",
+      "type": "historical"
+    },
+    {
+      "month": 10,
+      "day": 1,
+      "nameMs": "Hari Raya Puasa / Aidilfitri",
+      "nameEn": "Eid al-Fitr",
+      "type": "public_holiday"
+    },
+    {
+      "month": 10,
+      "day": 7,
+      "nameMs": "Peristiwa Perang Uhud",
+      "nameEn": "The Battle of Uhud",
+      "type": "historical"
+    },
+    {
+      "month": 12,
+      "day": 1,
+      "nameMs": "Awal Zulhijah",
+      "nameEn": "Beginning of Dhu al-Hijjah",
+      "type": "public_holiday"
+    },
+    {
+      "month": 12,
+      "day": "1-10",
+      "nameMs": "10 Hari Pertama Zulhijjah",
+      "nameEn": "First 10 Days of Dhu al-Hijjah",
+      "type": "voluntary"
+    },
+    {
+      "month": 12,
+      "day": 9,
+      "nameMs": "Hari Arafah",
+      "nameEn": "Day of Arafah",
+      "type": "ritual"
+    },
+    {
+      "month": 12,
+      "day": 9,
+      "nameMs": "Khutbah Terakhir & Pengharaman Nasi'",
+      "nameEn": "The Farewell Sermon & Ban on Nasi'",
+      "type": "historical"
+    },
+    {
+      "month": 12,
+      "day": 10,
+      "nameMs": "Hari Raya Korban / Aidiladha",
+      "nameEn": "Eid al-Adha",
+      "type": "public_holiday"
+    },
+    {
+      "month": 12,
+      "day": "11-13",
+      "nameMs": "Hari-hari Tasyrik",
+      "nameEn": "Days of Tashreeq",
+      "type": "ritual"
     }
   ],
   "recurring": [

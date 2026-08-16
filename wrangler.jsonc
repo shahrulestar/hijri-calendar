@@ -7,9 +7,12 @@
   "observability": {
     "enabled": true
   },
+  "assets": {
+    "directory": "./public"
+  },
   "routes": [
     {
-      "pattern": "islam-calendar.shahrulestar.com",
+      "pattern": "hijri.shahrulestar.com",
       "custom_domain": true
     }
   ]

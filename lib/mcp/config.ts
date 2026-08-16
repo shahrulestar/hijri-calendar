@@ -2,7 +2,7 @@ export const MCP_PATH = "/mcp"
 
 export const MCP_PUBLIC_URL =
   process.env.NEXT_PUBLIC_MCP_URL ??
-  "https://islam-calendar.shahrulestar.com/mcp"
+  "https://hijri.shahrulestar.com/mcp"
 
 export const MCP_API_KEY = process.env.MCP_API_KEY?.trim() || undefined
 

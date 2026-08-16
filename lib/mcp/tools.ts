@@ -83,7 +83,6 @@ export function registerTools(server: McpServer) {
                   {
                     hijri: result.hijri,
                     gregorian: result.gregorian,
-                    estimated: result.estimated,
                   },
                   mode,
                 ),
@@ -138,7 +137,7 @@ export function registerTools(server: McpServer) {
     {
       title: "Get Hijri Calendar",
       description:
-        "Get day-by-day Malaysian Hijri takwim (1447H–1450H, Asia/Kuala_Lumpur). Requires a filter: a Gregorian date, a Hijri year+month, or a Gregorian from+to range (max 62 days). Days outside the official JAKIM 2026–2028 takwim are estimated=true.",
+        "Get day-by-day Malaysian Hijri takwim (1447H–1450H, Asia/Kuala_Lumpur). Requires a filter: a Gregorian date, a Hijri year+month, or a Gregorian from+to range (max 62 days).",
       inputSchema: z.object({
         date: z
           .string()
@@ -219,7 +218,7 @@ export function registerTools(server: McpServer) {
     {
       title: "Get Islamic Events",
       description:
-        "Get important Islamic calendar events for Malaysia (1447H–1450H, Asia/Kuala_Lumpur). Gregorian dates are derived from the JAKIM lunar month table so they are never earlier than the Hijri day. Confirmed JAKIM e-Solat and 2026–2028 takwim dates are estimated=false; later dates may still follow official moon-sighting. Filter by year, month, type, or Gregorian date. Set includeRecurring to include monthly recurring events.",
+        "Get important Islamic calendar events for Malaysia (1447H–1450H, Asia/Kuala_Lumpur). Gregorian dates are derived from the JAKIM lunar month table so they are never earlier than the Hijri day. Filter by year, month, type, or Gregorian date. Set includeRecurring to include monthly recurring events.",
       inputSchema: z.object({
         year: z
           .number()

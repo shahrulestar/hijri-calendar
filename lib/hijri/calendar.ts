@@ -45,7 +45,6 @@ export interface DateLookupView {
     display: string
   }
   gregorian: { iso: string }
-  estimated: boolean
   month: MonthView
 }
 
@@ -60,7 +59,6 @@ export interface TakwimDay {
   hijri_month_name_ms: string
   hijri_month_name_en: string
   hijri_day: number
-  estimated: boolean
 }
 
 export interface DayView {
@@ -75,7 +73,6 @@ export interface DayView {
     nameEn: string
     display: string
   }
-  estimated: boolean
 }
 
 export interface ListDaysFilters {
@@ -209,7 +206,6 @@ export function toDayView(day: TakwimDay): DayView {
       nameEn: day.hijri_month_name_en,
       display: day.hijri_date,
     },
-    estimated: day.estimated,
   }
 }
 
@@ -229,7 +225,6 @@ export function lookupDate(date?: string): DateLookupView | undefined {
       display: formatHijriDate(day.hijri_day, month.nameMs, month.year),
     },
     gregorian: { iso: targetDate },
-    estimated: day.estimated,
     month: toMonthView(month),
   }
 }
