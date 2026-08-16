@@ -1,5 +1,4 @@
-import data from "../../data/hijri_months.json"
-import takwim from "../../data/takwim_hijri.json"
+import { hijriYearSummaries, months, takwimDays, TIMEZONE } from "./data"
 
 export interface HijriMonth {
   year: number
@@ -87,21 +86,14 @@ export interface ListDaysFilters {
   to?: string
 }
 
-const months = data.months as HijriMonth[]
-const years = data.years as HijriYearSummary[]
 const monthByCode = new Map(
   months.map((entry) => [`${entry.year}:${entry.codeMs}`, entry] as const),
 )
-
-const takwimDays: TakwimDay[] = Object.values(
-  takwim.years as Record<string, { days: TakwimDay[] }>,
-).flatMap((year) => year.days)
 
 const daysByDate = new Map(
   takwimDays.map((day) => [day.gregorian_date, day] as const),
 )
 
-const TIMEZONE = "Asia/Kuala_Lumpur"
 const MAX_DAY_RANGE = 62
 
 function parseIsoDate(iso: string): Date {
@@ -183,7 +175,7 @@ export function getMonth(year: number, month: number): HijriMonth | undefined {
 }
 
 export function getYearSummaries(): HijriYearSummary[] {
-  return years
+  return hijriYearSummaries
 }
 
 export function getTodayIso(): string {

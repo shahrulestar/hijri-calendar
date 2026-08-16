@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 export const metadata: Metadata = {
   title: "Islamic Calendar MCP",
   description:
-    "Remote MCP server for the JAKIM Hijri calendar (1447H–1449H). Connect AI clients at https://islam-calendar.shahrulestar.com/mcp",
+    "Remote MCP server for the JAKIM Hijri calendar (1447H–1450H). Connect AI clients at https://islam-calendar.shahrulestar.com/mcp",
   robots: {
     index: false,
     follow: false,

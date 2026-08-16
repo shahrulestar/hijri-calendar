@@ -31,15 +31,15 @@ export function registerTools(server: McpServer) {
     {
       title: "Get Lunar Months",
       description:
-        "Get Hijri (lunar) month details from the JAKIM calendar (1447H–1449H). Filter by year or month. Pass date (YYYY-MM-DD) to resolve which lunar month covers that Gregorian day. Responses always include Hijri and Gregorian dates.",
+        "Get Hijri (lunar) month details from the JAKIM calendar (1447H–1450H). Filter by year or month. Pass date (YYYY-MM-DD) to resolve which lunar month covers that Gregorian day. Responses always include Hijri and Gregorian dates.",
       inputSchema: z.object({
         year: z
           .number()
           .int()
           .min(1447)
-          .max(1449)
+          .max(1450)
           .optional()
-          .describe("Hijri year (1447–1449)"),
+          .describe("Hijri year (1447–1450)"),
         month: z
           .number()
           .int()
@@ -67,7 +67,7 @@ export function registerTools(server: McpServer) {
             content: [
               {
                 type: "text",
-                text: `No Hijri month covers ${date}. Data covers 1447H–1449H only.`,
+                text: `No Hijri month covers ${date}. Data covers 1447H–1450H only.`,
               },
             ],
             isError: true,
@@ -138,7 +138,7 @@ export function registerTools(server: McpServer) {
     {
       title: "Get Hijri Calendar",
       description:
-        "Get day-by-day Malaysian Hijri takwim (1447H–1449H, Asia/Kuala_Lumpur). Requires a filter: a Gregorian date, a Hijri year+month, or a Gregorian from+to range (max 62 days). Days outside the official JAKIM 2026–2027 takwim are estimated=true.",
+        "Get day-by-day Malaysian Hijri takwim (1447H–1450H, Asia/Kuala_Lumpur). Requires a filter: a Gregorian date, a Hijri year+month, or a Gregorian from+to range (max 62 days). Days outside the official JAKIM 2026–2028 takwim are estimated=true.",
       inputSchema: z.object({
         date: z
           .string()
@@ -149,7 +149,7 @@ export function registerTools(server: McpServer) {
           .number()
           .int()
           .min(1447)
-          .max(1449)
+          .max(1450)
           .optional()
           .describe("Hijri year (requires month)"),
         month: z
@@ -194,7 +194,7 @@ export function registerTools(server: McpServer) {
           content: [
             {
               type: "text",
-              text: "No takwim days matched. Data covers 1447H–1449H only.",
+              text: "No takwim days matched. Data covers 1447H–1450H only.",
             },
           ],
           isError: true,
@@ -219,15 +219,15 @@ export function registerTools(server: McpServer) {
     {
       title: "Get Islamic Events",
       description:
-        "Get important Islamic calendar events for Malaysia (1447H–1449H, Asia/Kuala_Lumpur). Gregorian dates are derived from the JAKIM lunar month table so they are never earlier than the Hijri day. Confirmed JAKIM e-Solat dates are estimated=false; later dates may still follow official moon-sighting. Filter by year, month, type, or Gregorian date. Set includeRecurring to include monthly recurring events.",
+        "Get important Islamic calendar events for Malaysia (1447H–1450H, Asia/Kuala_Lumpur). Gregorian dates are derived from the JAKIM lunar month table so they are never earlier than the Hijri day. Confirmed JAKIM e-Solat and 2026–2028 takwim dates are estimated=false; later dates may still follow official moon-sighting. Filter by year, month, type, or Gregorian date. Set includeRecurring to include monthly recurring events.",
       inputSchema: z.object({
         year: z
           .number()
           .int()
           .min(1447)
-          .max(1449)
+          .max(1450)
           .optional()
-          .describe("Hijri year (1447–1449)"),
+          .describe("Hijri year (1447–1450)"),
         month: z
           .number()
           .int()
@@ -263,7 +263,9 @@ export function registerTools(server: McpServer) {
       }
 
       if (includeRecurring) {
-        payload.recurring = listRecurringEvents()
+        const recurringMonth =
+          month ?? (date !== undefined ? lookupDate(date)?.hijri.month : undefined)
+        payload.recurring = listRecurringEvents({ month: recurringMonth })
       }
 
       return {

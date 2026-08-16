@@ -12,8 +12,8 @@ https://islam-calendar.shahrulestar.com/mcp
 
 ## What it covers
 
-- Hijri lunar months (1447H–1449H)
-- Day-by-day Hijri takwim (1447H–1449H)
+- Hijri lunar months (1447H–1450H; 1450H through Sha’ban only)
+- Day-by-day Hijri takwim (2025–2028 Gregorian, Asia/Kuala_Lumpur)
 - Important Islamic dates and observances in Malaysia
 - Matching Hijri and Gregorian (Miladi) dates
 
@@ -25,10 +25,24 @@ https://islam-calendar.shahrulestar.com/mcp
 | `get_hijri_calendar` | **Day-by-day takwim.** Hijri date and weekday for one day, a Hijri month, or a short Gregorian range. |
 | `get_islamic_events` | **Observances in Malaysia.** Aidilfitri, Aidiladha, Maulid, Awal Ramadan, and other important Islamic dates. |
 
-## Data source
+## Data
+
+Calendar files are split by **Gregorian year** under `data/takwim/`:
+
+| File | Contents |
+|------|----------|
+| `meta.json` | Timezone, month-name dictionaries, Hijri year summaries, recurring observances |
+| `2025.json`–`2028.json` | Day-by-day takwim, lunar months, and events whose Gregorian start falls in that year |
+
+A Hijri month that spans New Year is stored in the year it **starts** (for example Sha’ban 1449H lives in `2027.json`). The MCP tools merge all years in memory, so lookups by Hijri year still work.
 
 Calendar data follows Malaysia timezone (`Asia/Kuala_Lumpur`) and is verified against JAKIM’s official Islamic calendar (e-Solat):
 
 [JAKIM Islamic Calendar](https://www.e-solat.gov.my/index.php?siteId=24&pageId=26)
 
-Confirmed JAKIM dates are used as-is. Official JAKIM takwim days (2026–2027) are `estimated=false`. Later dates are estimated from the lunar month table and may change after official moon-sighting announcements — this server never advances an event earlier than its Hijri day on that table.
+Confirmed JAKIM dates are used as-is. Official JAKIM takwim days (2026–2028) are `estimated=false`. Later dates are estimated from the lunar month table and may change after official moon-sighting announcements — this server never advances an event earlier than its Hijri day on that table.
+
+## Sponsor
+
+If this calendar is useful, you can [sponsor the project on GitHub](https://github.com/sponsors/shahrulestar).
+

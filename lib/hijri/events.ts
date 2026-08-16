@@ -1,5 +1,8 @@
-import data from "../../data/islamic_events.json"
-
+import {
+  events,
+  recurring,
+  TIMEZONE,
+} from "./data"
 import {
   type CalendarMode,
   formatHijriDate,
@@ -34,6 +37,8 @@ export interface RecurringEvent {
   type: EventType
   days: number[]
   monthly: boolean
+  /** Hijri months where this recurring event does not apply (e.g. 9 = Ramadan). */
+  excludeMonths?: number[]
 }
 
 export interface EventView {
@@ -55,9 +60,6 @@ export interface EventView {
   }
 }
 
-const TIMEZONE = "Asia/Kuala_Lumpur" as const
-const events = data.events as IslamicEvent[]
-const recurring = data.recurring as RecurringEvent[]
 
 function parseIsoUtc(iso: string): number {
   const [year, month, day] = iso.split("-").map(Number)
@@ -140,8 +142,13 @@ export function listEvents(filters?: {
   })
 }
 
-export function listRecurringEvents(): RecurringEvent[] {
-  return recurring
+export function listRecurringEvents(filters?: {
+  month?: number
+}): RecurringEvent[] {
+  return recurring.filter((entry) => {
+    if (filters?.month === undefined) return true
+    return !entry.excludeMonths?.includes(filters.month)
+  })
 }
 
 /** Upcoming events on or after `today` (ISO YYYY-MM-DD, Malaysia civil date). */

@@ -1,0 +1,78 @@
+{
+  "source": "JAKIM - Jabatan Kemajuan Islam Malaysia, SKF Bahagian Penyelidikan (Panel Pakar Falak JAKIM); e-Solat for confirmed event dates; JAKIM takwim rasmi (Imkanur-rukyah) 2026–2028; TARIKH-TARIKH PENTING DALAM ISLAM 2028 / 1449-1450H; https://www.e-solat.gov.my/index.php?siteId=24&pageId=26",
+  "criteria": "Penentuan awal bulan hijriah adalah mengikut kriteria kebolehnampakan hilal Imkanur-rukyah (3 darjah tinggi hilal dan 6.4 darjah elongasi). 1 Muharram 1443H = 10 Ogos 2021",
+  "timezone": "Asia/Kuala_Lumpur",
+  "note": "Days with estimated=false are from the official JAKIM takwim (2026-01-01 to 2028-12-31). Other days are derived from the Malaysia lunar month table and may change after official moon-sighting announcements.",
+  "day_names": {
+    "A": "Ahad",
+    "I": "Isnin",
+    "T": "Selasa",
+    "R": "Rabu",
+    "K": "Khamis",
+    "J": "Jumaat",
+    "S": "Sabtu"
+  },
+  "hijri_months": {
+    "ms": {
+      "MUH": "Muharam",
+      "SAF": "Safar",
+      "RAW": "Rabiulawal",
+      "RAK": "Rabiulakhir",
+      "JAW": "Jamadilawal",
+      "JAK": "Jamadilakhir",
+      "REJ": "Rejab",
+      "SYA": "Syaaban",
+      "RAM": "Ramadan",
+      "SYW": "Syawal",
+      "ZKD": "Zulkaedah",
+      "ZHJ": "Zulhijah"
+    },
+    "en": {
+      "MUH": "Muharram",
+      "SAF": "Safar",
+      "RA1": "Rabi' al-Awwal",
+      "RA2": "Rabi' al-Thani",
+      "JM1": "Jumada al-Ula",
+      "JM2": "Jumada al-Thani",
+      "RAJ": "Rajab",
+      "SHA": "Sha'ban",
+      "RAM": "Ramadan",
+      "SHW": "Shawwal",
+      "DHQ": "Dhu al-Qi'dah",
+      "DHJ": "Dhu al-Hijjah"
+    }
+  },
+  "hijriYears": [
+    {
+      "year": 1447,
+      "days": 355,
+      "type": "leap (355 days)"
+    },
+    {
+      "year": 1448,
+      "days": 354,
+      "type": "common (354 days)"
+    },
+    {
+      "year": 1449,
+      "days": 355,
+      "type": "leap (355 days)"
+    }
+  ],
+  "recurring": [
+    {
+      "nameMs": "Puasa Sunat Ayyam al-Beed (Hari-Hari Putih)",
+      "nameEn": "White Days (Ayyam al-Beed)",
+      "type": "voluntary",
+      "days": [
+        13,
+        14,
+        15
+      ],
+      "monthly": true,
+      "excludeMonths": [
+        9
+      ]
+    }
+  ]
+}

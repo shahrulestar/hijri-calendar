@@ -143,7 +143,6 @@ export const LANDING_HTML = `<!DOCTYPE html>
     .alert p { margin: 0; color: var(--muted); }
     .alert a { color: inherit; }
     .github {
-      margin-top: 0.5rem;
       display: inline-flex;
       width: fit-content;
       align-items: center;
@@ -157,6 +156,12 @@ export const LANDING_HTML = `<!DOCTYPE html>
       font-size: 0.875rem;
       font-weight: 500;
       text-decoration: none;
+    }
+    .links {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
     .github:hover { background: var(--hover); }
     .github svg { width: 1rem; height: 1rem; }
@@ -176,7 +181,7 @@ export const LANDING_HTML = `<!DOCTYPE html>
   <main>
     <header>
       <h1>Islamic Calendar MCP</h1>
-      <p class="lede">A remote MCP server for the Malaysian Islamic (Hijri) calendar. Connect Cursor, Claude, Figma, or other AI clients to look up Hijri months, Gregorian dates, and important Islamic observances.</p>
+      <p class="lede">A remote MCP server for the Malaysian Islamic (Hijri) calendar (1447H–1450H). Connect Cursor, Claude, Figma, or other AI clients to look up Hijri months, Gregorian dates, and important Islamic observances.</p>
     </header>
 
     <section class="card">
@@ -232,11 +237,17 @@ export const LANDING_HTML = `<!DOCTYPE html>
 
     <aside class="alert">
       <strong>Data source</strong>
-      <p>Calendar data follows Malaysia time (Asia/Kuala_Lumpur) and is verified against <a href="https://www.e-solat.gov.my/index.php?siteId=24&amp;pageId=26" target="_blank" rel="noreferrer">JAKIM e-Solat</a>. Some later dates may still change after official moon-sighting announcements.</p>
-      <a class="github" href="https://github.com/shahrulestar/islamic-calendar-mcp" target="_blank" rel="noreferrer">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>
-        GitHub
-      </a>
+      <p>Calendar data follows Malaysia time (Asia/Kuala_Lumpur) for 1447H–1450H (Gregorian 2025–2028; 1450H through Sha’ban). Verified against <a href="https://www.e-solat.gov.my/index.php?siteId=24&amp;pageId=26" target="_blank" rel="noreferrer">JAKIM e-Solat</a>. Official 2026–2028 takwim days are confirmed; some later dates may still change after official moon-sighting announcements.</p>
+      <div class="links">
+        <a class="github" href="https://github.com/shahrulestar/islamic-calendar-mcp" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>
+          GitHub
+        </a>
+        <a class="github" href="https://github.com/sponsors/shahrulestar" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.5 12.6 12 20l-7.5-7.4a4.5 4.5 0 1 1 7.5-5.2 4.5 4.5 0 1 1 7.5 5.2z"/></svg>
+          Sponsor
+        </a>
+      </div>
     </aside>
   </main>
   <script>

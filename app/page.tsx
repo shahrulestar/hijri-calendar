@@ -1,4 +1,4 @@
-import { GithubIcon } from "@hugeicons/core-free-icons"
+import { GithubIcon, HeartIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 
 import { CopyButton } from "@/components/copy-button"
@@ -66,9 +66,10 @@ export default function Page() {
           Islamic Calendar MCP
         </h1>
         <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-          A remote MCP server for the Malaysian Islamic (Hijri) calendar. Connect
-          Cursor, Claude, Figma, or other AI clients to look up Hijri months,
-          Gregorian dates, and important Islamic observances.
+          A remote MCP server for the Malaysian Islamic (Hijri) calendar
+          (1447H–1450H). Connect Cursor, Claude, Figma, or other AI clients to
+          look up Hijri months, Gregorian dates, and important Islamic
+          observances.
         </p>
       </header>
 
@@ -132,15 +133,15 @@ export default function Page() {
       <Alert className="grid-cols-1">
         <AlertTitle>Data source</AlertTitle>
         <AlertDescription>
-          Calendar data follows Malaysia time (Asia/Kuala_Lumpur) and is verified
-          against{" "}
+          Calendar data follows Malaysia time (Asia/Kuala_Lumpur) for 1447H–1450H
+          (Gregorian 2025–2028; 1450H through Sha’ban). Verified against{" "}
           <a href={JAKIM_URL} target="_blank" rel="noreferrer">
             JAKIM e-Solat
           </a>
-          . Some later dates may still change after official moon-sighting
-          announcements.
+          . Official 2026–2028 takwim days are confirmed; some later dates may
+          still change after official moon-sighting announcements.
         </AlertDescription>
-        <div className="mt-2">
+        <div className="mt-2 flex flex-wrap gap-2">
           <Button
             variant="outline"
             size="sm"
@@ -155,6 +156,21 @@ export default function Page() {
           >
             <HugeiconsIcon icon={GithubIcon} data-icon="inline-start" />
             GitHub
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            nativeButton={false}
+            render={
+              <a
+                href="https://github.com/sponsors/shahrulestar"
+                target="_blank"
+                rel="noreferrer"
+              />
+            }
+          >
+            <HugeiconsIcon icon={HeartIcon} data-icon="inline-start" />
+            Sponsor
           </Button>
         </div>
       </Alert>
