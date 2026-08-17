@@ -161,11 +161,12 @@ export const LANDING_HTML = `<!DOCTYPE html>
     .tool p { margin: 0; color: var(--muted); }
     .source {
       display: flex;
+      width: 100%;
       flex-direction: column;
       gap: 0.5rem;
     }
     .source p { margin: 0; font-size: 0.875rem; color: var(--muted); }
-    .source a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .source p a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
     .github {
       display: inline-flex;
       width: fit-content;

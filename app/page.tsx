@@ -124,7 +124,7 @@ export default function Page() {
         </ItemGroup>
       </section>
 
-      <section className="flex flex-col gap-4">
+      <section className="flex w-full flex-col gap-4">
         <div className="flex flex-col gap-2">
           <h2 className="font-heading scroll-m-20 text-xl font-medium tracking-tight">
             Data source
@@ -148,6 +148,7 @@ export default function Page() {
             variant="outline"
             size="sm"
             nativeButton={false}
+            className="no-underline"
             render={
               <a
                 href="https://github.com/shahrulestar/islamic-calendar-mcp"
@@ -163,6 +164,7 @@ export default function Page() {
             variant="outline"
             size="sm"
             nativeButton={false}
+            className="no-underline"
             render={
               <a
                 href="https://github.com/sponsors/shahrulestar"
