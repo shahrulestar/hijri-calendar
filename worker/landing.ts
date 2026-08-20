@@ -190,6 +190,7 @@ export const LANDING_HTML = `<!DOCTYPE html>
     }
     .github:hover { background: var(--hover); }
     .github svg { width: 1rem; height: 1rem; }
+    .download-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   </style>
   <script>
     (function () {
@@ -255,6 +256,18 @@ export const LANDING_HTML = `<!DOCTYPE html>
           <code>get_islamic_events</code>
           <p>Important Islamic dates in Malaysia — Aidilfitri, Aidiladha, Maulid, Awal Ramadan, and other observances.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="connect">
+      <div class="connect-head">
+        <h2>Download calendar</h2>
+        <p class="connect-desc">Import the file into Google Calendar (Settings → Import) or Apple Calendar (File → Import). Dates follow JAKIM takwim; re-download if dates are updated. Delete a previous import first to avoid duplicates.</p>
+      </div>
+      <div class="download-links">
+        <a class="github" href="/calendar/islamic-events.ics">Download .ics</a>
+        <a class="github" href="/calendar/islamic-events.ics?include=public_holiday">Include public holidays</a>
+        <a class="github" href="/calendar/islamic-events.ics?includeRecurring=1">Include recurring</a>
       </div>
     </section>
 
