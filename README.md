@@ -27,31 +27,6 @@ https://hijri.shahrulestar.com/mcp
 | `get_hijri_calendar` | **Day-by-day takwim.** Hijri date and weekday for one day, a Hijri month, or a short Gregorian range. |
 | `get_islamic_events` | **Observances in Malaysia.** Aidilfitri, Aidiladha, Maulid, Awal Ramadan, and other important Islamic dates. |
 
-## Download to your calendar
-
-Download an iCalendar (`.ics`) file and import it into Google Calendar, Apple Calendar, or another calendar app.
-
-```text
-https://hijri.shahrulestar.com/calendar/islamic-events.ics
-```
-
-The default file includes ritual, voluntary, and historical observances (not public holidays). Coverage is 1447H–1450H (1450H through Sha’ban), following JAKIM takwim in `Asia/Kuala_Lumpur`. Re-download if official dates change. If you import again, delete the previous calendar first to avoid duplicates.
-
-| Query | Effect |
-|-------|--------|
-| *(none)* | Ritual, voluntary, and historical events |
-| `?type=public_holiday` | One event type only (`public_holiday`, `ritual`, `voluntary`, or `historical`) |
-| `?include=public_holiday` | Add public holidays to the default set |
-| `?include=all` | All event types |
-| `?year=1447` | One Hijri year (1447–1450) |
-| `?month=9` | One Hijri month (1–12) |
-| `?lang=ms` | Malay titles (`en` is the default) |
-| `?includeRecurring=1` | Expand monthly White Days (Ayyam al-Beed) to concrete dates |
-
-**Google Calendar:** Settings → Import & export → Import → choose the `.ics` file.
-
-**Apple Calendar:** Double-click the file, or File → Import.
-
 ## Data
 
 Calendar files are split by **Gregorian year** under `data/takwim/`:
